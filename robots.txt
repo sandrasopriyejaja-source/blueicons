@@ -1,0 +1,8 @@
+# robots.txt for BLUE_ICONS GLOBAL LIMITED
+User-agent: *
+Allow: /
+Disallow: /scratch/
+Disallow: /UI\ design/
+Disallow: /*.mp4$
+
+Sitemap: https://blueiconsglobal.com/sitemap.xml

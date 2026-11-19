@@ -1,0 +1,47 @@
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Sensitive environment variables & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+
+# Temporary development workspaces & logs
+scratch/
+tmp/
+temp/
+*.tmp
+*.log
+
+# Editor directories
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Build and hosting caches
+node_modules/
+.vercel
+dist/
+build/
+
+# Raw design materials and unreferenced source folders (root-level only)
+/UI design/
+/Coaster buses/
+/Escalade/
+/Hiace buses/
+/Hilux/
+/Land Cruisers/
+/Prado/
+/images/
+/Blue iCON Gold Fingerprint Logo.png
