@@ -5697,6 +5697,84 @@ section {
     transform: translateY(-4px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   }
+
+  /* 6. About Us Desktop Hover Animations (Scoped strictly to body[data-page="about"]) */
+  body[data-page="about"] .bento-tile.bento-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  body[data-page="about"] .bento-tile.bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(7, 27, 51, 0.08);
+  }
+  body[data-page="about"] .bento-tile.card-dark:hover {
+    box-shadow: 0 14px 32px rgba(7, 27, 51, 0.25);
+  }
+  body[data-page="about"] .bento-tile.bento-media {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  body[data-page="about"] .bento-tile.bento-media:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(7, 27, 51, 0.08);
+  }
+  body[data-page="about"] .bento-tile.bento-media img {
+    transition: transform 0.3s ease;
+  }
+  body[data-page="about"] .bento-tile.bento-media:hover img {
+    transform: scale(1.03);
+  }
+  body[data-page="about"] .value-card-box {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  body[data-page="about"] .value-card-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(7, 27, 51, 0.06);
+  }
+  body[data-page="about"] .about-founder-pill-container {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  body[data-page="about"] .about-founder-pill-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(184, 139, 69, 0.2);
+  }
+  body[data-page="about"] .about-founder-image img {
+    transition: transform 0.3s ease;
+  }
+  body[data-page="about"] .about-founder-pill-container:hover .about-founder-image img {
+    transform: scale(1.02);
+  }
+  body[data-page="about"] .philosophy-step-item {
+    transition: transform 0.25s ease;
+  }
+  body[data-page="about"] .philosophy-step-item:hover {
+    transform: translateX(4px);
+  }
+  body[data-page="about"] .page-hero-right img {
+    transition: transform 0.3s ease;
+  }
+  body[data-page="about"] .page-hero-container:hover .page-hero-right img {
+    transform: scale(1.02);
+  }
+
+  /* 7. Our Services Desktop Hover Animations (Scoped strictly to body[data-page="services"]) */
+  body[data-page="services"] .service-feature-media {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  body[data-page="services"] .service-feature-media:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(7, 27, 51, 0.1);
+  }
+  body[data-page="services"] .service-feature-media img {
+    transition: transform 0.3s ease;
+  }
+  body[data-page="services"] .service-feature-media:hover img {
+    transform: scale(1.03);
+  }
+  body[data-page="services"] .page-hero-right img {
+    transition: transform 0.3s ease;
+  }
+  body[data-page="services"] .page-hero-container:hover .page-hero-right img {
+    transform: scale(1.02);
+  }
 }
 
 /* ==========================================================================
@@ -5711,5 +5789,14 @@ section {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  body[data-page="about"] .bento-tile:hover,
+  body[data-page="about"] .value-card-box:hover,
+  body[data-page="about"] .about-founder-pill-container:hover,
+  body[data-page="about"] .philosophy-step-item:hover,
+  body[data-page="about"] .bento-tile img,
+  body[data-page="services"] .service-feature-media:hover,
+  body[data-page="services"] .service-feature-media img {
+    transform: none !important;
   }
 }
