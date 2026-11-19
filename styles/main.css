@@ -1603,9 +1603,14 @@ section {
   object-fit: cover;
 }
 
-/* About Company Overview */
+/* ==========================================================================
+   ABOUT US PAGE SPECIFIC STYLES (Matches Finished Design Screenshots)
+   ========================================================================== */
+
+/* Section 2: About Company Overview */
 .about-company-overview {
-  padding: 0 0 120px;
+  padding: 0;
+  margin-bottom: 120px;
   background-color: var(--surface-page);
 }
 
@@ -1616,182 +1621,292 @@ section {
   align-items: start;
 }
 
-/* 4-Element Standards Banner Composition (Figma node 25:382) */
-.about-standards-banner {
-  padding: 0 0 120px;
-  background-color: var(--surface-page);
+.about-company-col-left .eyebrow-large {
+  display: block;
+  margin-bottom: 16px;
 }
 
-.standards-composition-row {
+.about-company-col-left .heading-h1 {
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: -0.8px;
+  color: var(--text-navy, #071b33);
+}
+
+.about-company-lead {
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+  color: var(--text-navy, #071b33);
+  margin-bottom: 20px;
+}
+
+.about-company-body {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--text-muted, #647180);
+  margin: 0;
+}
+
+/* Section 2 Bento Grid: Asymmetric 2x2 Bento Grid (Matches Desktop Screenshot) */
+.about-bento-grid {
   display: grid;
-  grid-template-columns: 580px 1fr;
+  grid-template-columns: repeat(13, 1fr);
   gap: 24px;
-  align-items: center;
-  margin-bottom: 24px;
+  margin-top: 56px;
 }
 
-.standards-composition-row.alt {
-  grid-template-columns: 1fr 580px;
-}
-
-.standards-text-card {
-  background-color: var(--surface-subtle);
-  border-radius: 30px;
-  padding: 60px 48px;
-  position: relative;
+.bento-tile {
+  border-radius: 32px;
   overflow: hidden;
-  height: 420px;
+  height: 380px;
+  min-height: 380px;
+  box-sizing: border-box;
+}
+
+/* Row 1: Light Card (5 cols) + Ushers Image (8 cols) */
+.about-bento-grid .card-light {
+  grid-column: span 5;
+  background-color: var(--surface-subtle, #f5f7f9);
+}
+
+.about-bento-grid .tile-ushers {
+  grid-column: span 8;
+}
+
+/* Row 2: Collage Image (8 cols) + Dark Card (5 cols) */
+.about-bento-grid .tile-collage {
+  grid-column: span 8;
+}
+
+.about-bento-grid .card-dark {
+  grid-column: span 5;
+  background-color: #071b33;
+  color: #ffffff;
+}
+
+.bento-card {
+  padding: 56px 44px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  position: relative;
 }
 
-.standards-text-card .watermark-num {
-  position: absolute;
-  top: 24px;
-  right: 36px;
-  font-family: var(--font-primary);
-  font-size: 80px;
+.bento-badge {
+  font-family: var(--font-secondary);
+  font-size: 16px;
   font-weight: 700;
-  color: var(--accent-gold-alt);
-  opacity: 0.18;
-  line-height: 1;
+  color: var(--accent-strong, #b88b45);
+  margin-bottom: 24px;
+  display: block;
 }
 
-.standards-media-card {
-  border-radius: 30px;
-  overflow: hidden;
-  height: 420px;
+.bento-badge.badge-dark {
+  color: #c5a46d;
 }
 
-.standards-media-card img {
+.badge-mobile-text {
+  display: none;
+}
+
+.bento-watermark-num {
+  display: none;
+}
+
+.bento-card.card-light h3 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+  color: var(--text-navy, #071b33);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.bento-card.card-light p {
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--text-muted, #647180);
+  margin: 0;
+}
+
+.bento-card.card-dark h3 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.bento-card.card-dark p {
+  font-size: 15px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.bento-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* 4 Values Cards Grid (Figma node 25:383) */
+/* Section 4: The Standards Behind Our Work */
+.about-standards-section {
+  padding: 0;
+  margin-bottom: 120px;
+  background-color: var(--surface-page);
+}
+
+.about-standards-header {
+  margin-bottom: 48px;
+}
+
 .standards-values-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  margin-top: 60px;
 }
 
 .value-card-box {
-  background-color: var(--surface-subtle);
-  border-radius: 20px;
+  background-color: var(--surface-subtle, #f5f7f9);
+  border-radius: 24px;
   padding: 32px 24px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  min-height: 220px;
 }
 
 .value-card-num {
   font-family: var(--font-secondary);
   font-size: 16px;
   font-weight: 700;
-  color: var(--accent-gold-dark);
-  margin-bottom: 36px;
+  color: var(--accent-strong, #b88b45);
+  margin-bottom: 24px;
 }
 
 .value-card-box h4 {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--text-navy);
-  margin-bottom: 14px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-navy, #071b33);
+  margin-bottom: 12px;
+  line-height: 26px;
 }
 
 .value-card-box p {
   font-family: var(--font-secondary);
-  font-size: 16px;
-  line-height: 26px;
-  color: var(--text-muted);
+  font-size: 14.5px;
+  line-height: 23px;
+  color: var(--text-muted, #647180);
+  margin: 0;
 }
 
-/* About Us Pill-Shaped Founder Layout (Figma node 28:503) */
+/* Section 5: Founder & Creative Director Layout */
 .about-founder-pill-section {
-  padding: 0 0 120px;
+  padding: 0;
+  margin-bottom: 120px;
   background-color: var(--surface-page);
 }
 
 .about-founder-pill-container {
   width: 100%;
-  max-width: 1384px;
+  max-width: 1440px;
   margin: 0 auto;
-  background-color: var(--accent-strong);
-  border-radius: 50px;
+  background-color: var(--accent-strong, #b88b45);
+  border-radius: 40px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 680px;
+  min-height: 580px;
   align-items: stretch;
-}
-
-.about-founder-info {
-  background-color: var(--accent-strong);
-  color: #ffffff;
-  padding: 64px 56px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.about-founder-info .eyebrow {
-  color: var(--surface-subtle);
-}
-
-.about-founder-info h2 {
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 60px;
-  letter-spacing: -2px;
-  color: #ffffff;
-  margin-top: 12px;
-  margin-bottom: 8px;
-}
-
-.about-founder-info .founder-role {
-  font-family: var(--font-secondary);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--surface-subtle);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-}
-
-.about-founder-info .founder-bio {
-  font-family: var(--font-secondary);
-  font-size: 16px;
-  line-height: 29px;
-  color: #ffffff;
-  margin-bottom: 32px;
-}
-
-.about-founder-quote {
-  border-left: 2px solid var(--surface-subtle);
-  padding-left: 24px;
-  font-family: var(--font-primary);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 30px;
-  color: #ffffff;
 }
 
 .about-founder-image {
   height: 100%;
-  min-height: 716px;
+  min-height: 580px;
+  position: relative;
+  overflow: hidden;
 }
 
 .about-founder-image img {
   width: 100%;
   height: 100%;
+  min-height: 580px;
   object-fit: cover;
+  object-position: center 20%;
+  display: block;
 }
 
-/* Service Philosophy Steps */
+.about-founder-info {
+  background-color: var(--accent-strong, #b88b45);
+  color: #ffffff;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.founder-eyebrow {
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.founder-heading {
+  font-family: var(--font-primary);
+  font-size: 44px;
+  line-height: 52px;
+  letter-spacing: -0.8px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.about-founder-info .founder-role {
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+}
+
+.about-founder-info .founder-bio {
+  font-family: var(--font-secondary);
+  font-size: 15.5px;
+  line-height: 26px;
+  color: #ffffff;
+  margin-bottom: 28px;
+}
+
+.about-founder-quote {
+  border-left: 2px solid rgba(255, 255, 255, 0.6);
+  padding-left: 20px;
+}
+
+.about-founder-quote p {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 25px;
+  color: #ffffff;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Section 6: Service Philosophy */
 .service-philosophy-section {
-  padding: 0 0 120px;
+  padding: 0;
+  margin-bottom: 120px;
   background-color: var(--surface-page);
 }
 
@@ -1803,36 +1918,38 @@ section {
 }
 
 .philosophy-step-item {
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--border-subtle, #e5e9ee);
   padding: 28px 0;
   display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 24px;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
   align-items: start;
 }
 
 .philosophy-step-item:last-child {
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle, #e5e9ee);
 }
 
 .step-num {
   font-family: var(--font-secondary);
   font-size: 16px;
   font-weight: 700;
-  color: var(--accent-gold-dark);
+  color: var(--accent-strong, #b88b45);
+  margin-top: 2px;
 }
 
 .step-content h4 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
-  color: var(--text-navy);
+  color: var(--text-navy, #071b33);
   margin-bottom: 8px;
 }
 
 .step-content p {
-  font-family: var(--font-secondary);
-  font-size: 17px;
-  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--text-muted, #647180);
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -3624,6 +3741,86 @@ section {
     max-width: 700px !important;
     margin: 0 auto !important;
   }
+
+  /* About Us Tablet Specifics (Scoped strictly to body[data-page="about"]) */
+  body[data-page="about"] .about-company-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 36px !important;
+    align-items: start !important;
+  }
+  body[data-page="about"] .about-bento-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    margin-top: 40px !important;
+  }
+  body[data-page="about"] .bento-tile {
+    grid-column: span 1 !important;
+    height: 350px !important;
+    min-height: 350px !important;
+    border-radius: 24px !important;
+  }
+  body[data-page="about"] .bento-card {
+    padding: 36px 28px !important;
+  }
+  body[data-page="about"] .bento-card h3 {
+    font-size: 24px !important;
+    line-height: 32px !important;
+    margin-bottom: 14px !important;
+  }
+  body[data-page="about"] .bento-card p {
+    font-size: 14.5px !important;
+    line-height: 23px !important;
+  }
+  body[data-page="about"] .about-standards-header {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+    margin-bottom: 32px !important;
+  }
+  body[data-page="about"] .standards-values-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  body[data-page="about"] .value-card-box {
+    border-radius: 20px !important;
+    padding: 28px 24px !important;
+  }
+  body[data-page="about"] .about-founder-pill-container {
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 32px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+  }
+  body[data-page="about"] .about-founder-image {
+    width: 100% !important;
+    height: 420px !important;
+    min-height: 420px !important;
+  }
+  body[data-page="about"] .about-founder-image img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 420px !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
+  }
+  body[data-page="about"] .about-founder-info {
+    padding: 44px 32px !important;
+    width: 100% !important;
+  }
+  body[data-page="about"] .philosophy-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.2fr !important;
+    gap: 40px !important;
+    align-items: start !important;
+  }
+  body[data-page="about"] .philosophy-step-item {
+    grid-template-columns: 60px 1fr !important;
+    gap: 20px !important;
+    padding: 24px 0 !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -4008,107 +4205,350 @@ section {
   }
 
   /* ========================================================================
-     2. ABOUT US: OUR MISSION & OUR VISION
+     2. ABOUT US SPECIFICS ON MOBILE (Matches Screenshot Exactly)
      ======================================================================== */
-  .about-standards-banner {
-    padding: 28px 0 !important;
-  }
-  .standards-composition-row,
-  .standards-composition-row.alt {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 14px !important;
-    margin-bottom: 24px !important;
-  }
-  .standards-composition-row:last-child {
+  /* Consistent Inter-Section Vertical Spacing */
+  body[data-page="about"] .page-hero-section {
+    padding: 16px 0 20px !important;
     margin-bottom: 0 !important;
   }
-  .standards-composition-row .standards-media-card,
-  .standards-composition-row.alt .standards-media-card {
+  body[data-page="about"] .about-company-overview {
+    padding: 20px 0 24px !important;
+    margin-bottom: 0 !important;
+  }
+  body[data-page="about"] .about-standards-section {
+    padding: 0 16px 24px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  body[data-page="about"] .about-standards-section .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  body[data-page="about"] .about-founder-pill-section {
+    padding: 0 0 24px !important;
+    margin-bottom: 0 !important;
+  }
+  body[data-page="about"] .service-philosophy-section {
+    padding: 20px 0 !important;
+    margin-bottom: 0 !important;
+  }
+  body[data-page="about"] .site-footer-boxed {
+    margin-top: 24px !important;
+  }
+
+  /* Hero on Mobile: Navigation at top, then copy, then image */
+  body[data-page="about"] .page-hero-container {
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 24px !important;
+    padding: 20px 16px !important;
+    background-color: var(--surface-subtle) !important;
+    overflow: hidden !important;
+    min-height: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  body[data-page="about"] .page-hero-left {
+    display: contents !important;
+    padding: 0 !important;
+  }
+  body[data-page="about"] .home-hero-nav {
     order: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin-bottom: 24px !important;
+    padding: 0 !important;
+  }
+  body[data-page="about"] .page-hero-copy {
+    order: 2 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  body[data-page="about"] .page-hero-copy .eyebrow {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: var(--accent-strong, #b88b45) !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    display: block !important;
+  }
+  body[data-page="about"] .page-hero-copy .display-hero {
+    font-size: 28px !important;
+    line-height: 36px !important;
+    letter-spacing: -0.3px !important;
+    margin-bottom: 14px !important;
+  }
+  body[data-page="about"] .page-hero-subheading {
+    font-size: 15px !important;
+    line-height: 24px !important;
+    color: var(--text-secondary, #647180) !important;
+    margin: 0 !important;
+  }
+  body[data-page="about"] .page-hero-right {
+    order: 3 !important;
     width: 100% !important;
     height: 240px !important;
     min-height: 240px !important;
-    border-radius: 24px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+  body[data-page="about"] .page-hero-right img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    display: block !important;
+  }
+
+  /* Section 2: Our Company Overview Text */
+  body[data-page="about"] .about-company-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  body[data-page="about"] .about-company-col-left .eyebrow-large {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: var(--accent-strong, #b88b45) !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    display: block !important;
+  }
+  body[data-page="about"] .about-company-col-left .heading-h1 {
+    font-size: 26px !important;
+    line-height: 34px !important;
+    letter-spacing: -0.2px !important;
+    margin-bottom: 14px !important;
+  }
+  body[data-page="about"] .about-company-lead {
+    font-size: 15px !important;
+    line-height: 24px !important;
+    margin-bottom: 14px !important;
+  }
+  body[data-page="about"] .about-company-body {
+    font-size: 15px !important;
+    line-height: 24px !important;
+  }
+
+  /* Section 2 Bento Grid on Mobile: Every image and card EXACT SAME height and width */
+  body[data-page="about"] .about-bento-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-top: 24px !important;
+  }
+  body[data-page="about"] .bento-tile {
+    width: 100% !important;
+    height: 260px !important;
+    min-height: 260px !important;
+    max-height: 260px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+  body[data-page="about"] .bento-media.tile-ushers {
+    order: 1 !important;
+  }
+  body[data-page="about"] .bento-card.card-light {
+    order: 2 !important;
+  }
+  body[data-page="about"] .bento-media.tile-collage {
+    order: 3 !important;
+  }
+  body[data-page="about"] .bento-card.card-dark {
+    order: 4 !important;
+  }
+  body[data-page="about"] .bento-card {
+    padding: 26px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    position: relative !important;
     overflow: hidden !important;
   }
-  .standards-media-card img {
+  body[data-page="about"] .badge-desktop-text {
+    display: none !important;
+  }
+  body[data-page="about"] .badge-mobile-text {
+    display: inline-block !important;
+  }
+  body[data-page="about"] .bento-badge {
+    font-family: var(--font-secondary, sans-serif) !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 20px !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  body[data-page="about"] .bento-card.card-light .bento-badge {
+    color: var(--accent-strong, #b88b45) !important;
+  }
+  body[data-page="about"] .bento-card.card-dark .bento-badge {
+    color: #c5a46d !important;
+  }
+  body[data-page="about"] .bento-card h3 {
+    font-size: 19px !important;
+    line-height: 26px !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  body[data-page="about"] .bento-card p {
+    font-size: 13.5px !important;
+    line-height: 21px !important;
+    margin: 0 !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  body[data-page="about"] .bento-watermark-num {
+    display: block !important;
+    position: absolute !important;
+    right: 18px !important;
+    bottom: 8px !important;
+    font-family: var(--font-primary, sans-serif) !important;
+    font-size: 68px !important;
+    font-weight: 800 !important;
+    line-height: 0.9 !important;
+    letter-spacing: -2px !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    z-index: 1 !important;
+  }
+  body[data-page="about"] .bento-card.card-light .bento-watermark-num {
+    color: #b88b45 !important;
+    opacity: 0.16 !important;
+  }
+  body[data-page="about"] .bento-card.card-dark .bento-watermark-num {
+    color: #c5a46d !important;
+    opacity: 0.20 !important;
+  }
+  body[data-page="about"] .bento-media img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
     display: block !important;
   }
-  .standards-composition-row .standards-text-card,
-  .standards-composition-row.alt .standards-text-card {
-    order: 2 !important;
-    width: 100% !important;
-    padding: 32px 20px 24px !important;
-    border-radius: 24px !important;
-    min-height: auto !important;
-    height: auto !important;
-    box-sizing: border-box !important;
+
+  /* Section 3: The Standards Behind Our Work on Mobile */
+  body[data-page="about"] .about-standards-header {
     display: flex !important;
     flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 18px !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
   }
-  .standards-composition-row .standards-text-card {
-    background-color: var(--surface-subtle) !important;
-  }
-  .standards-composition-row.alt .standards-text-card {
-    background-color: #071b33 !important;
-  }
-  .standards-text-card .eyebrow-large {
+  body[data-page="about"] .about-standards-header .eyebrow-large {
     font-size: 13px !important;
-    font-weight: 700 !important;
-    margin-bottom: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: var(--accent-strong, #b88b45) !important;
+    text-transform: uppercase !important;
     display: block !important;
+    margin-bottom: 4px !important;
   }
-  .standards-composition-row .standards-text-card .eyebrow-large {
-    color: var(--accent-strong) !important;
-  }
-  .standards-composition-row.alt .standards-text-card .eyebrow-large {
-    color: #c5a46d !important;
-  }
-  .standards-text-card h3 {
-    font-size: 22px !important;
-    line-height: 30px !important;
-    font-weight: 700 !important;
+  body[data-page="about"] .about-standards-header .heading-h1 {
+    font-size: 26px !important;
+    line-height: 34px !important;
     letter-spacing: -0.2px !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 8px !important;
+    color: var(--text-navy, #071b33) !important;
   }
-  .standards-composition-row .standards-text-card h3 {
-    color: #071b33 !important;
-  }
-  .standards-composition-row.alt .standards-text-card h3 {
-    color: #ffffff !important;
-  }
-  .standards-text-card p {
+  body[data-page="about"] .about-standards-header .body-large {
     font-size: 14.5px !important;
     line-height: 23px !important;
-    margin-bottom: 14px !important;
+    color: var(--text-secondary, #647180) !important;
+    margin: 0 !important;
   }
-  .standards-composition-row .standards-text-card p {
-    color: #647180 !important;
-  }
-  .standards-composition-row.alt .standards-text-card p {
-    color: rgba(255, 255, 255, 0.75) !important;
-  }
-  .standards-text-card .watermark-num {
-    position: static !important;
-    display: block !important;
-    font-size: 32px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-    margin-top: 14px !important;
-    margin-bottom: 0 !important;
+  body[data-page="about"] .standards-values-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin-top: 0 !important;
     padding: 0 !important;
+    width: 100% !important;
   }
-  .standards-composition-row .standards-text-card .watermark-num {
-    color: #c5a46d !important;
-    opacity: 0.22 !important;
+  body[data-page="about"] .value-card-box {
+    width: 100% !important;
+    border-radius: 18px !important;
+    padding: 22px 18px !important;
+    min-height: auto !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
   }
-  .standards-composition-row.alt .standards-text-card .watermark-num {
-    color: #c5a46d !important;
-    opacity: 0.22 !important;
+  body[data-page="about"] .value-card-num {
+    margin-bottom: 12px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: var(--accent-strong, #b88b45) !important;
+  }
+  body[data-page="about"] .value-card-box h4 {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    margin-bottom: 6px !important;
+    font-weight: 700 !important;
+    color: var(--text-navy, #071b33) !important;
+  }
+  body[data-page="about"] .value-card-box p {
+    font-size: 14px !important;
+    line-height: 22px !important;
+    color: var(--text-muted, #647180) !important;
+    margin: 0 !important;
+  }
+
+  /* Section 5: Philosophy on Mobile */
+  body[data-page="about"] .philosophy-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  body[data-page="about"] .philosophy-header-col .eyebrow-large {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: var(--accent-strong, #b88b45) !important;
+    text-transform: uppercase !important;
+    display: block !important;
+    margin-bottom: 12px !important;
+  }
+  body[data-page="about"] .philosophy-header-col .heading-h1 {
+    font-size: 26px !important;
+    line-height: 34px !important;
+    margin-bottom: 10px !important;
+  }
+  body[data-page="about"] .philosophy-step-item {
+    grid-template-columns: 48px 1fr !important;
+    gap: 14px !important;
+    padding: 20px 0 !important;
+  }
+  body[data-page="about"] .step-content h4 {
+    font-size: 18px !important;
+    margin-bottom: 6px !important;
+  }
+  body[data-page="about"] .step-content p {
+    font-size: 14px !important;
+    line-height: 22px !important;
   }
 
   /* ========================================================================
@@ -4197,62 +4637,93 @@ section {
     box-sizing: border-box !important;
   }
 
-  /* About Us Founder Pill on Mobile (Uncropped portrait) */
-  .about-founder-pill-container {
+  /* About Us Founder Pill on Mobile (Full width edge-to-edge, zero radius matching screenshot) */
+  body[data-page="about"] .about-founder-pill-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  body[data-page="about"] .about-founder-pill-section .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  body[data-page="about"] .about-founder-pill-container {
     display: flex !important;
     flex-direction: column !important;
-    border-radius: 32px !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
     background-color: var(--accent-strong) !important;
     min-height: auto !important;
     width: 100% !important;
+    margin: 0 !important;
   }
-  .about-founder-image {
+  body[data-page="about"] .about-founder-image {
     width: 100% !important;
     height: 380px !important;
     min-height: 380px !important;
     overflow: hidden !important;
+    border-radius: 0 !important;
   }
-  .about-founder-image img {
+  body[data-page="about"] .about-founder-image img {
     width: 100% !important;
     height: 100% !important;
     min-height: 380px !important;
     object-fit: cover !important;
     object-position: center 20% !important;
+    border-radius: 0 !important;
     display: block !important;
   }
-  .about-founder-info {
-    padding: 36px 24px 32px !important;
+  body[data-page="about"] .about-founder-info {
+    padding: 36px 20px 32px !important;
     background-color: var(--accent-strong) !important;
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    border-radius: 0 !important;
   }
-  .about-founder-info .eyebrow {
+  body[data-page="about"] .founder-eyebrow {
     color: #f3f5f7 !important;
     font-size: 13px !important;
     font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
     margin-bottom: 12px !important;
+    display: block !important;
   }
-  .about-founder-info .founder-role {
+  body[data-page="about"] .founder-heading {
+    font-size: 28px !important;
+    line-height: 36px !important;
+    color: #ffffff !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+  }
+  body[data-page="about"] .about-founder-info .founder-role {
     color: #f3f5f7 !important;
     font-size: 13px !important;
     font-weight: 700 !important;
     margin-bottom: 20px !important;
   }
-  .about-founder-info .founder-bio {
+  body[data-page="about"] .about-founder-info .founder-bio {
     color: #ffffff !important;
-    font-size: 15px !important;
-    line-height: 24px !important;
+    font-size: 14.5px !important;
+    line-height: 23px !important;
     margin-bottom: 24px !important;
   }
-  .about-founder-quote {
+  body[data-page="about"] .about-founder-quote {
     color: #ffffff !important;
-    border-left: 2px solid #ffffff !important;
+    border-left: 2px solid rgba(255, 255, 255, 0.6) !important;
     padding-left: 18px !important;
-    font-size: 17px !important;
-    line-height: 26px !important;
+  }
+  body[data-page="about"] .about-founder-quote p {
+    font-size: 15px !important;
+    line-height: 23px !important;
+    color: #ffffff !important;
+    font-style: italic !important;
+    margin: 0 !important;
   }
 
   /* ========================================================================

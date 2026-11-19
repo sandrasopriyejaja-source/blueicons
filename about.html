@@ -30,12 +30,11 @@
 <body data-page="about">
 
   <main>
-    <!-- Section 1: About Us Hero (Exact Figma Frame 25:2 / Node 25:3) -->
+    <!-- Section 1: Hero Section -->
     <section class="page-hero-section">
       <div class="page-hero-container">
         <!-- Left Side: Integrated Navigation & Copy -->
         <div class="page-hero-left">
-          <!-- Integrated Header Navigation (Figma Node 25:25) -->
           <header class="home-hero-nav">
             <a href="index.html" class="brand-logo-wrap" aria-label="BLUE_ICONS Home">
               <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo">
@@ -50,11 +49,14 @@
               </ul>
             </nav>
             <button class="mobile-menu-btn" aria-label="Toggle navigation menu" id="mobileMenuBtn">
-              <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+              </svg>
             </button>
           </header>
 
-          <!-- Hero Main Copy (Figma Node 25:7) -->
           <div class="page-hero-copy">
             <span class="eyebrow">ABOUT US</span>
             <h1 class="display-hero">
@@ -66,153 +68,152 @@
           </div>
         </div>
 
-        <!-- Right Side: Clean curved media image (Figma Node 25:6) -->
+        <!-- Right Side: Clean curved media image -->
         <div class="page-hero-right">
           <img src="assets/images/about-hero.png" alt="BLUE_ICONS Event &amp; Operational Support">
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Our Company Overview (Figma Node 25:340) -->
+    <!-- Section 2: Our Company & Bento Layout -->
     <section class="about-company-overview">
       <div class="container">
         <div class="about-company-grid">
-          <div>
-            <span class="eyebrow-large">Our Company</span>
-            <h2 class="heading-h1" style="font-size: 44px; line-height: 52px;">
+          <div class="about-company-col-left">
+            <span class="eyebrow-large">OUR COMPANY</span>
+            <h2 class="heading-h1">
               Dependable Support for Everyday and Special Requirements.
             </h2>
           </div>
-          <div>
-            <p style="font-family: var(--font-primary); font-size: 22px; font-weight: 600; line-height: 32px; color: var(--text-navy); margin-bottom: 24px;">
-              BLUE_ICONS GLOBAL LIMITED provides professional security services, event ushering, executive car rentals, chauffeur services and logistics support. Based in Port Harcourt, we work with individuals, businesses and corporate organisations across Nigeria.
+          <div class="about-company-col-right">
+            <p class="about-company-lead">
+              BLUE_ICONS GLOBAL LIMITED provides professional security services, event ushering, executive car rentals, chauffeur services and logistics support. Based in Port Harcourt, we work with clients across Nigeria to deliver reliable, well-coordinated support.
             </p>
-            <p class="body-default">
-              Every request starts with a conversation. We clarify what is needed, where the service will take place and when support is required. From security arrangements to event staffing and vehicle hire, we aim to make the process clear, organised and straightforward.
+            <p class="about-company-body">
+              Our focus is on understanding each client’s brief and providing the right personnel and transport. We believe in doing the job properly, with clear communication and dependable service from start to finish.
             </p>
+          </div>
+        </div>
+
+        <!-- Asymmetric Bento Grid (Matches Desktop & Mobile Screenshots Exactly) -->
+        <div class="about-bento-grid">
+          <!-- Tile 1: Card 01 (Light grey card) -->
+          <div class="bento-tile bento-card card-light">
+            <span class="bento-badge">
+              <span class="badge-desktop-text">01</span>
+              <span class="badge-mobile-text">Our Mission</span>
+            </span>
+            <h3>Professional service. Clear communication. Dependable support.</h3>
+            <p>Trained personnel, well-maintained vehicles and attentive service coordination for individuals and businesses.</p>
+            <span class="bento-watermark-num watermark-01" aria-hidden="true">01</span>
+          </div>
+
+          <!-- Tile 2: Image 1 (Ushers under canopy) -->
+          <div class="bento-tile bento-media tile-ushers">
+            <img src="assets/images/about-standards-1.png" alt="BLUE_ICONS Professional Event Ushers">
+          </div>
+
+          <!-- Tile 3: Image 2 (5-Photo collage) -->
+          <div class="bento-tile bento-media tile-collage">
+            <img src="assets/images/about-standards-2.png" alt="BLUE_ICONS Security and Fleet Services">
+          </div>
+
+          <!-- Tile 4: Card 02 (Dark Navy card) -->
+          <div class="bento-tile bento-card card-dark">
+            <span class="bento-badge badge-dark">
+              <span class="badge-desktop-text">02</span>
+              <span class="badge-mobile-text">Our Vision</span>
+            </span>
+            <h3>A respected service partner across Nigeria.</h3>
+            <p>From Port Harcourt to major cities across Nigeria, we deliver professional support for events, journeys and security needs.</p>
+            <span class="bento-watermark-num watermark-02" aria-hidden="true">02</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 3: Our Standards 4-Element Banner Composition (Figma Node 25:382 & 25:383) -->
-    <section class="about-standards-banner">
+    <!-- Section 3: The Standards Behind Our Work -->
+    <section class="about-standards-section">
       <div class="container">
-        <!-- Row 1: Mission Card (Left) + Accompanying Image 1 (Right) -->
-        <div class="standards-composition-row">
-          <div class="standards-text-card">
-            <span class="eyebrow-large">Our Mission</span>
-            <h3 class="heading-h3" style="font-size: 30px; line-height: 38px; margin-bottom: 18px;">
-              Professional service. Clear communication. Dependable support.
-            </h3>
-            <p class="body-default" style="font-size: 16px; line-height: 28px;">
-              To provide reliable security, event, mobility and logistics services through capable personnel, careful coordination and a strong commitment to client needs.
-            </p>
-            <span class="watermark-num">01</span>
+        <div class="section-header-split about-standards-header">
+          <div>
+            <span class="eyebrow-large">OUR STANDARDS</span>
+            <h2 class="heading-h1">The Standards Behind Our Work.</h2>
           </div>
-          <div class="standards-media-card">
-            <img src="assets/images/about-standards-1.png" alt="BLUE_ICONS Professional Service Standard">
-          </div>
-        </div>
-
-        <!-- Row 2: Accompanying Image 2 (Left) + Vision Card (Right) -->
-        <div class="standards-composition-row alt">
-          <div class="standards-media-card">
-            <img src="assets/images/about-standards-2.png" alt="BLUE_ICONS Clear Communication &amp; Coordination">
-          </div>
-          <div class="standards-text-card">
-            <span class="eyebrow-large">Our Vision</span>
-            <h3 class="heading-h3" style="font-size: 30px; line-height: 38px; margin-bottom: 18px;">
-              A Trusted Standard for Professional Service.
-            </h3>
-            <p class="body-default" style="font-size: 16px; line-height: 28px;">
-              To build a trusted Nigerian company recognised for professional people, well-coordinated services and consistent attention to client requirements.
-            </p>
-            <span class="watermark-num">02</span>
-          </div>
-        </div>
-
-        <!-- The Standards Behind Our Work: 4-Column Grid (Node 25:383) -->
-        <div style="margin-top: 80px;">
-          <div style="max-width: 780px; margin-bottom: 48px;">
-            <span class="eyebrow-large">What Guides Us</span>
-            <h2 class="heading-h1" style="font-size: 48px; line-height: 56px; margin-bottom: 16px;">
-              The Standards Behind Our Work.
-            </h2>
+          <div>
             <p class="body-large">
-              Good service shows in the way people are treated, how well details are managed and whether the agreed support is delivered with care.
+              Every service we deliver is guided by clear standards: trained people, well-maintained vehicles, clear communication and dependable coordination.
             </p>
           </div>
+        </div>
 
-          <div class="standards-values-grid">
-            <div class="value-card-box">
-              <span class="value-card-num">01</span>
-              <h4>Professionalism</h4>
-              <p>We approach every client, assignment and setting with courtesy and respect.</p>
-            </div>
-            <div class="value-card-box">
-              <span class="value-card-num">02</span>
-              <h4>Reliability</h4>
-              <p>We communicate clearly and take preparation and agreed timings seriously.</p>
-            </div>
-            <div class="value-card-box">
-              <span class="value-card-num">03</span>
-              <h4>Excellence</h4>
-              <p>We pay attention to the practical details that make a service run well.</p>
-            </div>
-            <div class="value-card-box">
-              <span class="value-card-num">04</span>
-              <h4>Customer Commitment</h4>
-              <p>We listen first, then shape our support around the actual brief.</p>
-            </div>
+        <div class="standards-values-grid">
+          <div class="value-card-box">
+            <span class="value-card-num">01</span>
+            <h4>Professionalism</h4>
+            <p>Trained and presentable personnel who understand courtesy, discretion and doing the job properly.</p>
+          </div>
+          <div class="value-card-box">
+            <span class="value-card-num">02</span>
+            <h4>Reliability</h4>
+            <p>Clear communication, dependable timing and practical coordination around your schedule.</p>
+          </div>
+          <div class="value-card-box">
+            <span class="value-card-num">03</span>
+            <h4>Excellence</h4>
+            <p>High standards in appearance, vehicle presentation and operational delivery.</p>
+          </div>
+          <div class="value-card-box">
+            <span class="value-card-num">04</span>
+            <h4>Customer Commitment</h4>
+            <p>We take time to understand the brief and deliver support that fits your specific needs.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 4: Pill-Shaped Two-Part Founder Layout (Figma Node 28:503) -->
+    <!-- Section 4: Founder Section -->
     <section class="about-founder-pill-section">
       <div class="container">
         <div class="about-founder-pill-container">
-          <!-- Left Half: Founder Information & Quote on Gold Background -->
+          <!-- Left: Founder Image (Photo on Left on Desktop, Top on Mobile) -->
+          <div class="about-founder-image">
+            <img src="assets/images/about-founder.png" alt="Sandra Sopriye Jaja — Founder &amp; Creative Director">
+          </div>
+          <!-- Right: Founder Information & Quote on Gold Background -->
           <div class="about-founder-info">
-            <span class="eyebrow">OUR FOUNDER</span>
-            <h2>Sandra Sopriye Jaja</h2>
+            <span class="founder-eyebrow">FOUNDER</span>
+            <h2 class="founder-heading">Sandra Sopriye Jaja</h2>
             <p class="founder-role">Founder &amp; Creative Director</p>
             <p class="founder-bio">
-              Sandra Sopriye Jaja is the Founder and Creative Director of BLUE_ICONS GLOBAL LIMITED. Driven by a vision to build a reputable Nigerian service brand, she leads the company’s work across security, event support, executive car rentals and logistics. Her focus is on professionalism, thoughtful coordination and service that meets clients’ real needs.
+              Sandra Sopriye Jaja founded BLUE_ICONS with a clear ambition: to build a Nigerian service company known for professionalism and dependable delivery. As Founder and Creative Director, she leads the brand’s work across security, event support, executive mobility and logistics, with a focus on understanding each client’s needs and delivering quality service.
             </p>
             <div class="about-founder-quote">
-              “Professional service starts with listening, preparation and respect for the people we serve.”
+              <p>&ldquo;Professionalism is not just a standard for us&mdash;it is the foundation of every service we deliver.&rdquo;</p>
             </div>
-          </div>
-
-          <!-- Right Half: Founder Photograph (Figma Node 28:489) -->
-          <div class="about-founder-image">
-            <img src="assets/images/about-founder.png" alt="Sandra Sopriye Jaja — Founder and Creative Director">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 5: Service Philosophy (Figma Node 2:1044) -->
+    <!-- Section 5: Service Philosophy -->
     <section class="service-philosophy-section">
       <div class="container">
         <div class="philosophy-grid">
-          <div>
-            <span class="eyebrow-large">Our Service Philosophy</span>
-            <h2 class="heading-h1" style="font-size: 46px; line-height: 54px;">
+          <div class="philosophy-header-col">
+            <span class="eyebrow-large">OUR PHILOSOPHY</span>
+            <h2 class="heading-h1">
               We Listen, Plan and Coordinate with Care.
             </h2>
           </div>
 
-          <div>
+          <div class="philosophy-steps-col">
             <!-- Step 1 -->
             <div class="philosophy-step-item">
               <span class="step-num">01</span>
               <div class="step-content">
-                <h4>Understand</h4>
-                <p>We clarify the requirement, venue and timings before recommending support.</p>
+                <h4>Listen</h4>
+                <p>We understand your requirements, venue details and timings before recommending support.</p>
               </div>
             </div>
 
@@ -221,7 +222,7 @@
               <span class="step-num">02</span>
               <div class="step-content">
                 <h4>Plan</h4>
-                <p>We identify the people, vehicles and practical arrangements needed for the brief.</p>
+                <p>We identify the right personnel, vehicles and practical arrangements needed for the brief.</p>
               </div>
             </div>
 
