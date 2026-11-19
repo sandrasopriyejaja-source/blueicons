@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
+  initWhoWeAreCarousel();
   initVehicleDetail();
   initVehicleEnquiryForm();
   initContactForm();
@@ -54,6 +55,128 @@ function initMobileMenu() {
       }
     }
   });
+}
+
+// 1b. Who We Are Mobile Horizontal Scroll (Slow, smooth continuous auto-scroll that pauses on interaction and smoothly resets)
+function initWhoWeAreCarousel() {
+  const scrollArea = document.querySelector('.home-checkerboard-grid');
+  if (!scrollArea) return;
+
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let prefersReducedMotion = motionQuery.matches;
+  motionQuery.addEventListener('change', (e) => {
+    prefersReducedMotion = e.matches;
+  });
+
+  let isInteracting = false;
+  let isTouching = false;
+  let isResetting = false;
+  let pauseTimer = null;
+  let resetTimer = null;
+  let animationId = null;
+  let currentScroll = scrollArea.scrollLeft;
+  const speed = 0.35; // Very slow, calm auto-scroll (~21px/sec at 60fps)
+
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  function tick() {
+    if (isMobile() && !isInteracting && !isTouching && !isResetting && !prefersReducedMotion) {
+      const maxScroll = scrollArea.scrollWidth - scrollArea.clientWidth;
+      if (maxScroll > 10) {
+        if (scrollArea.scrollLeft >= maxScroll - 1) {
+          // Reached the end: pause comfortably so user can view Card 04, then reset smoothly
+          isResetting = true;
+          if (resetTimer) clearTimeout(resetTimer);
+          resetTimer = setTimeout(() => {
+            if (!isInteracting && !isTouching && isMobile()) {
+              scrollArea.scrollTo({ left: 0, behavior: 'smooth' });
+              // Wait for smooth scroll back to 0 to complete, pause at start, then resume
+              setTimeout(() => {
+                currentScroll = 0;
+                isResetting = false;
+              }, 1600);
+            } else {
+              isResetting = false;
+            }
+          }, 2400);
+        } else {
+          currentScroll += speed;
+          scrollArea.scrollLeft = currentScroll;
+        }
+      }
+    }
+    animationId = requestAnimationFrame(tick);
+  }
+
+  function handleInteractionStart() {
+    isTouching = true;
+    isInteracting = true;
+    if (resetTimer) clearTimeout(resetTimer);
+    if (pauseTimer) clearTimeout(pauseTimer);
+    isResetting = false;
+    currentScroll = scrollArea.scrollLeft;
+  }
+
+  function handleInteractionEnd() {
+    isTouching = false;
+    currentScroll = scrollArea.scrollLeft;
+    if (pauseTimer) clearTimeout(pauseTimer);
+    // Resume shortly after the user lets go
+    pauseTimer = setTimeout(() => {
+      if (!isTouching) {
+        currentScroll = scrollArea.scrollLeft;
+        isInteracting = false;
+      }
+    }, 2200);
+  }
+
+  // Touch & Pointer events
+  scrollArea.addEventListener('touchstart', handleInteractionStart, { passive: true });
+  scrollArea.addEventListener('touchmove', () => {
+    currentScroll = scrollArea.scrollLeft;
+  }, { passive: true });
+  scrollArea.addEventListener('touchend', handleInteractionEnd, { passive: true });
+  scrollArea.addEventListener('touchcancel', handleInteractionEnd, { passive: true });
+
+  scrollArea.addEventListener('pointerdown', handleInteractionStart, { passive: true });
+  scrollArea.addEventListener('pointerup', handleInteractionEnd, { passive: true });
+  scrollArea.addEventListener('pointercancel', handleInteractionEnd, { passive: true });
+
+  // Native manual scroll listener (tracks user fling or scrollbar gesture)
+  scrollArea.addEventListener('scroll', () => {
+    if (isInteracting || isTouching) {
+      currentScroll = scrollArea.scrollLeft;
+    }
+  }, { passive: true });
+
+  scrollArea.addEventListener('wheel', () => {
+    handleInteractionStart();
+    handleInteractionEnd();
+  }, { passive: true });
+
+  scrollArea.addEventListener('mouseenter', () => {
+    isInteracting = true;
+  });
+  scrollArea.addEventListener('mouseleave', () => {
+    handleInteractionEnd();
+  });
+
+  // Handle window resize cleanly
+  window.addEventListener('resize', () => {
+    if (!isMobile()) {
+      isInteracting = true;
+      scrollArea.scrollLeft = 0;
+      currentScroll = 0;
+    } else {
+      isInteracting = false;
+      currentScroll = scrollArea.scrollLeft;
+    }
+  });
+
+  // Start the animation loop
+  animationId = requestAnimationFrame(tick);
 }
 
 // 2. Vehicle Catalog Data

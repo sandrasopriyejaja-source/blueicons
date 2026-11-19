@@ -30,12 +30,11 @@
 <body data-page="home">
 
   <main>
-    <!-- Section 1: Hero Section (Exact 2-Part Figma Composition: Frame 7:26) -->
+    <!-- Section 1: Hero Section -->
     <section class="home-hero-section">
       <div class="home-hero-container">
         <!-- Left Side: Integrated Navigation, Copy & Stacked Cards -->
         <div class="home-hero-left">
-          <!-- Integrated Header Navigation (Figma Node 12:72) -->
           <header class="home-hero-nav">
             <a href="index.html" class="brand-logo-wrap" aria-label="BLUE_ICONS Home">
               <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo">
@@ -50,11 +49,14 @@
               </ul>
             </nav>
             <button class="mobile-menu-btn" aria-label="Toggle navigation menu" id="mobileMenuBtn">
-              <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+              </svg>
             </button>
           </header>
 
-          <!-- Hero Main Copy (Figma Node 4:9) -->
           <div class="home-hero-copy">
             <span class="eyebrow">SECURITY SERVICES &middot; EVENT USHERING &middot; CAR HIRE</span>
             <h1 class="display-hero">
@@ -75,7 +77,7 @@
             </div>
           </div>
 
-          <!-- 3 Cascading Overlapping Cards (Figma Nodes 7:27, 7:28, 7:29) -->
+          <!-- 3 Cascading Overlapping Cards -->
           <div class="hero-cards-stack">
             <div class="hero-card-item hero-card-1">
               <img src="assets/images/hero-card-1.png" alt="BLUE_ICONS Prado Fleet">
@@ -89,7 +91,7 @@
           </div>
         </div>
 
-        <!-- Right Side: Full-Height Clean Video/Image (Figma Node 3:8) -->
+        <!-- Right Side: Full-Height Clean Video -->
         <div class="home-hero-right">
           <video class="home-hero-video" autoplay loop muted playsinline poster="assets/images/hero-right.png">
             <source src="assets/videos/homepage-hero.mp4" type="video/mp4">
@@ -99,211 +101,208 @@
       </div>
     </section>
 
-    <!-- Section 2: Who We Are / Overview (Node 21:41) -->
-    <section class="section-features">
+    <!-- Section 2: Who We Are / Checkerboard Grid -->
+    <section class="home-overview-section">
       <div class="container">
         <div class="section-header-split">
           <div>
-            <span class="eyebrow-large">Who We Are</span>
-            <h2 class="heading-h1">A Dependable Partner for Protection, Events and Transport.</h2>
+            <span class="eyebrow-large">WHO WE ARE</span>
+            <h2 class="heading-h1">Professional Security, Event &amp; Mobility Services</h2>
           </div>
           <div>
             <p class="body-large">
-              BLUE_ICONS GLOBAL LIMITED delivers reliable security guards and escorts, professional event ushers and executive car rentals. Based in Port Harcourt, we support clients across Nigeria with practical coordination, clear communication and dependable people.
+              BLUE_ICONS GLOBAL LIMITED is a Nigerian security and professional services company based in Port Harcourt, Rivers State. We provide security guards and escorts, event ushers, executive car hire, chauffeur services and logistics support for individuals, businesses and organisations across Nigeria.
             </p>
           </div>
         </div>
 
-        <div class="features-grid">
-          <!-- 01 Protection -->
-          <div class="feature-box">
-            <span class="eyebrow">01 &middot; SECURITY SERVICES</span>
-            <h3>Protection &amp; Patrol</h3>
-            <p>Manned guarding, residential security, corporate access control and mobile armed escort services for safe transit across Nigeria.</p>
+        <div class="home-checkerboard-grid">
+          <!-- Col 1: Photo top, Card 01 bottom -->
+          <div class="checkerboard-col">
+            <div class="checkerboard-media">
+              <img src="assets/images/home-grid-ushers-female.png" alt="BLUE_ICONS Event Ushers in formal attire">
+            </div>
+            <div class="checkerboard-card">
+              <span class="checkerboard-num">01</span>
+              <h3>Professionalism</h3>
+              <p>Trained, presentable personnel who understand the importance of courtesy, discretion and doing the job properly.</p>
+            </div>
           </div>
 
-          <!-- 02 Events -->
-          <div class="feature-box">
-            <span class="eyebrow">02 &middot; EVENTS &amp; USHERING</span>
-            <h3>Guest Experience &amp; Coordination</h3>
-            <p>Trained, well-presented male and female ushers, protocol teams and event coordinators for corporate summits, weddings and state functions.</p>
+          <!-- Col 2: Card 02 top, Photo bottom -->
+          <div class="checkerboard-col">
+            <div class="checkerboard-card">
+              <span class="checkerboard-num">02</span>
+              <h3>Reliability</h3>
+              <p>Clear communication and practical coordination around your event, journey or security requirements.</p>
+            </div>
+            <div class="checkerboard-media">
+              <img src="assets/images/home-grid-ushers-male.png" alt="BLUE_ICONS Protocol and ushering team">
+            </div>
           </div>
 
-          <!-- 03 Mobility -->
-          <div class="feature-box">
-            <span class="eyebrow">03 &middot; EXECUTIVE MOBILITY</span>
-            <h3>Chauffeured &amp; Convoy Travel</h3>
-            <p>Prados, Land Cruisers, Hilux escort trucks and luxury passenger buses with vetted professional chauffeurs for secure, comfortable movement.</p>
+          <!-- Col 3: Photo top, Card 03 bottom -->
+          <div class="checkerboard-col">
+            <div class="checkerboard-media">
+              <img src="assets/images/home-grid-prado.png" alt="BLUE_ICONS Executive Prado Fleet">
+            </div>
+            <div class="checkerboard-card">
+              <span class="checkerboard-num">03</span>
+              <h3>Operational Excellence</h3>
+              <p>We pay attention to the brief, prepare the right support and keep the details organised.</p>
+            </div>
+          </div>
+
+          <!-- Col 4: Card 04 top, Photo bottom -->
+          <div class="checkerboard-col">
+            <div class="checkerboard-card">
+              <span class="checkerboard-num">04</span>
+              <h3>Customer Commitment</h3>
+              <p>We listen to what you need and keep you informed from your first enquiry to service delivery.</p>
+            </div>
+            <div class="checkerboard-media">
+              <img src="assets/images/home-grid-escorts.png" alt="BLUE_ICONS Armed Security Personnel &amp; Escorts">
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 3: Core Divisions Detailed Showcase (Node 21:42) -->
-    <section class="section-divisions">
+    <!-- Section 3: Our Core Divisions (3 Service Cards) -->
+    <section class="home-divisions-section">
       <div class="container">
-        <div style="max-width: 760px; margin-bottom: 64px;">
-          <span class="eyebrow-large">Our Core Divisions</span>
-          <h2 class="heading-h1" style="margin-bottom: 16px;">Services Handled with Coordination and Care.</h2>
-          <p class="body-large">
-            Every service is managed directly by our team, ensuring proper briefing, punctual delivery and professional conduct from start to finish.
-          </p>
+        <div class="home-divisions-header">
+          <span class="eyebrow-large">OUR CORE DIVISIONS</span>
+          <h2 class="heading-h1">Security, Event Staffing &amp; Executive Transport</h2>
         </div>
 
-        <!-- Division 1: Security Services -->
-        <div class="division-row">
-          <div class="division-media">
-            <img src="assets/images/security-services.png" alt="BLUE_ICONS Security Personnel &amp; Operations">
-            <span class="division-num">01</span>
-          </div>
-          <div class="division-content">
-            <span class="eyebrow">PROTECTION &middot; ESCORT &middot; PATROL</span>
-            <h3>Security Guard &amp; Escort Services</h3>
-            <p class="body-default">
-              From corporate premises and construction sites to personal transit, BLUE_ICONS provides disciplined, trained security personnel and armed escort coordination.
-            </p>
-            <div class="division-checklist">
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>Vetted and professionally trained security guards</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>Armed escort vehicles and transit security teams</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>Event access control, crowd management and perimeter patrol</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>24-hour operations supervision and incident response</span>
+        <div class="home-divisions-grid">
+          <!-- Card 1: 1. Security Services -->
+          <div class="home-division-card">
+            <div class="division-card-media">
+              <img src="assets/images/security-services.png" alt="BLUE_ICONS Security Guards &amp; Escorts">
+            </div>
+            <div class="division-card-body">
+              <h3>1. Security Services</h3>
+              <p class="division-card-desc">
+                Security guards, event security personnel and professional escorts for private, residential and corporate requirements.
+              </p>
+              <ul class="division-specs-grid">
+                <li><span class="spec-bullet"></span> Security Guards</li>
+                <li><span class="spec-bullet"></span> Event Security</li>
+                <li><span class="spec-bullet"></span> Professional Escorts</li>
+                <li><span class="spec-bullet"></span> Corporate Personnel</li>
+              </ul>
+              <div class="division-card-action">
+                <a href="services.html#security" class="division-card-link">
+                  Explore Security Services <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
             </div>
-            <div>
-              <a href="services.html#security" class="btn btn-outline">
-                Enquire About Security Services
-                <img src="assets/icons/arrow-right-navy-26.svg" alt="" aria-hidden="true">
-              </a>
-            </div>
           </div>
-        </div>
 
-        <!-- Division 2: Events & Ushering -->
-        <div class="division-row reverse">
-          <div class="division-media">
-            <img src="assets/images/event-ushers.png" alt="BLUE_ICONS Professional Event Ushers">
-            <span class="division-num">02</span>
-          </div>
-          <div class="division-content">
-            <span class="eyebrow">USHERING &middot; PROTOCOL &middot; GUEST SUPPORT</span>
-            <h3>Events &amp; Ushering Services</h3>
-            <p class="body-default">
-              Create a welcoming, orderly and refined atmosphere for your guests. Our ushers are trained in polite guest reception, VIP seating protocol and program coordination.
-            </p>
-            <div class="division-checklist">
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>Impeccably groomed male and female event ushers</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>Corporate conferences, AGMs, seminars and gala dinners</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>High-profile weddings, private receptions and celebrations</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>Pre-event briefing, venue coordination and gift distribution</span>
+          <!-- Card 2: 2. Events & Ushering -->
+          <div class="home-division-card">
+            <div class="division-card-media">
+              <img src="assets/images/event-ushers.png" alt="BLUE_ICONS Professional Event Ushers">
+            </div>
+            <div class="division-card-body">
+              <h3>2. Events &amp; Ushering</h3>
+              <p class="division-card-desc">
+                Need ushers for a wedding, conference or corporate function? We provide professional event ushers and support personnel to help manage guest arrival, seating and event flow.
+              </p>
+              <ul class="division-specs-grid">
+                <li><span class="spec-bullet"></span> Professional Ushers</li>
+                <li><span class="spec-bullet"></span> Protocol Management</li>
+                <li><span class="spec-bullet"></span> Event Support</li>
+                <li><span class="spec-bullet"></span> Guest Coordination</li>
+              </ul>
+              <div class="division-card-action">
+                <a href="services.html#events" class="division-card-link">
+                  Explore Event Services <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
             </div>
-            <div>
-              <a href="services.html#events" class="btn btn-outline">
-                Enquire About Event Support
-                <img src="assets/icons/arrow-right-navy-26.svg" alt="" aria-hidden="true">
-              </a>
-            </div>
           </div>
-        </div>
 
-        <!-- Division 3: Executive Mobility -->
-        <div class="division-row">
-          <div class="division-media">
-            <img src="assets/images/executive-mobility.png" alt="BLUE_ICONS Executive Mobility Fleet">
-            <span class="division-num">03</span>
-          </div>
-          <div class="division-content">
-            <span class="eyebrow">CHAUFFEUR &middot; FLEET HIRE &middot; LOGISTICS</span>
-            <h3>Executive Car Rentals &amp; Logistics</h3>
-            <p class="body-default">
-              Reliable vehicles for corporate executives, VIP guests and group transport. Every vehicle is maintained to strict standards and operated by professional, polite chauffeurs.
-            </p>
-            <div class="division-checklist">
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>Toyota Land Cruisers, Prado SUVs and Hilux utility vehicles</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>Toyota Hiace &amp; Coaster buses for corporate group movements</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>Airport pickup, hotel transfers and interstate travel</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
-                <span>Vetted, punctual chauffeurs with route knowledge</span>
-              </div>
+          <!-- Card 3: 3. Executive Mobility -->
+          <div class="home-division-card">
+            <div class="division-card-media">
+              <img src="assets/images/executive-mobility.png" alt="BLUE_ICONS Executive Mobility Fleet">
             </div>
-            <div>
-              <a href="fleet.html" class="btn btn-outline">
-                View Our Fleet
-                <img src="assets/icons/arrow-right-navy-26.svg" alt="" aria-hidden="true">
-              </a>
+            <div class="division-card-body">
+              <h3>3. Executive Mobility</h3>
+              <p class="division-card-desc">
+                Book an executive car, arrange a chauffeur or discuss transport and logistics support for your business, event or personal journey.
+              </p>
+              <ul class="division-specs-grid">
+                <li><span class="spec-bullet"></span> Executive Car Rentals</li>
+                <li><span class="spec-bullet"></span> Chauffeur Services</li>
+                <li><span class="spec-bullet"></span> Logistics Support</li>
+                <li><span class="spec-bullet"></span> Transportation</li>
+              </ul>
+              <div class="division-card-action">
+                <a href="fleet.html" class="division-card-link">
+                  Explore Mobility Services <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 4: Why Us / Standards (Node 23:509) -->
-    <section class="section-standards-overview">
+    <!-- Section 4: Why BLUE_ICONS (Partner) -->
+    <section class="home-partner-section">
       <div class="container">
-        <div class="founder-overview-split">
-          <div class="division-media" style="height: 480px;">
-            <img src="assets/images/workstation.png" alt="Operations Control &amp; Planning">
+        <div class="home-partner-split">
+          <div class="home-partner-media-wrap">
+            <img src="assets/images/home-partner-security.png" alt="BLUE_ICONS Professional Security Team" class="home-partner-img">
+            <div class="home-partner-badge">
+              <span>Practical support for people, events and businesses.</span>
+            </div>
           </div>
-          <div>
-            <span class="eyebrow-large">Why BLUE_ICONS</span>
-            <h2 class="heading-h1" style="margin-bottom: 20px;">Practical Support for People, Events and Businesses.</h2>
-            <p class="body-large" style="margin-bottom: 24px;">
-              We understand that dependability is what matters most. Whether you need security personnel on site, a team of ushers for a milestone celebration, or an executive car waiting at the airport, we focus on listening first, planning thoroughly and delivering without fuss.
+          <div class="home-partner-content">
+            <span class="eyebrow-large">WHY BLUE_ICONS</span>
+            <h2 class="heading-h1">A Professional Partner You Can Depend On.</h2>
+            <p class="body-large home-partner-desc">
+              Whether you are organising an event, arranging transport or looking for security personnel, we take time to understand the brief and recommend support that fits.
             </p>
-            <div class="division-checklist">
-              <div class="check-item">
-                <img src="assets/icons/check-gold.svg" alt="" aria-hidden="true">
-                <span>Single point of contact for security, events and vehicle hire</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-gold.svg" alt="" aria-hidden="true">
-                <span>Clear upfront arrangements and prompt communication</span>
-              </div>
-              <div class="check-item">
-                <img src="assets/icons/check-gold.svg" alt="" aria-hidden="true">
-                <span>Experienced team rooted in Rivers State and serving all Nigeria</span>
-              </div>
+            <ul class="home-partner-checklist">
+              <li>
+                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
+                <span>Skilled and professional personnel</span>
+              </li>
+              <li>
+                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
+                <span>Reliable service delivery</span>
+              </li>
+              <li>
+                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
+                <span>Solutions tailored to individual requirements</span>
+              </li>
+              <li>
+                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
+                <span>Nationwide service coverage</span>
+              </li>
+              <li>
+                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
+                <span>A customer-focused approach</span>
+              </li>
+            </ul>
+            <div class="home-partner-action">
+              <a href="about.html" class="home-partner-link">
+                Discover our approach <span aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 5: Founder Section (Figma Frame 144:39 / 141:361 "Frame 23") -->
-    <section class="founder-banner-section">
-      <div class="founder-container-wrap">
+    <!-- Section 5: Founder Section -->
+    <section class="home-founder-section">
+      <div class="container">
         <div class="founder-card-frame23">
           <div class="founder-card-media">
             <img src="assets/images/founder-desk.jpg" alt="Sandra Sopriye Jaja — Founder &amp; Creative Director">
@@ -314,35 +313,35 @@
             <p class="founder-card-paragraph">
               Sandra Sopriye Jaja founded BLUE_ICONS with a clear ambition: to build a Nigerian service company known for professionalism and dependable delivery. As Founder and Creative Director, she leads the brand’s work across security, event support, executive mobility and logistics, with a focus on understanding each client’s needs and delivering quality service.
             </p>
-            <a href="about.html" class="btn-founder-learn">
-              Learn More About Us
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            <div class="founder-card-action">
+              <a href="about.html" class="btn-founder-learn">
+                Learn More About Us <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 6: Head Office Section (Figma Node 24:680 - 24:693) -->
-    <!-- Regular weight text (400), size 18px, NOT bold -->
-    <section class="head-office-section">
+    <!-- Section 6: Our Reach / Head Office -->
+    <section class="home-reach-section">
       <div class="container">
-        <div class="head-office-badge">
-          <img src="assets/icons/location-pin.svg" alt="" aria-hidden="true">
-          <span>Port Harcourt, Rivers State</span>
+        <div class="home-reach-wrap">
+          <span class="eyebrow-large">OUR REACH</span>
+          <h2 class="heading-h1">Professional Services<br>Across Nigeria</h2>
+          <p class="body-large home-reach-desc">
+            From our head office in Port Harcourt, Rivers State, we coordinate security personnel, event ushers, executive car rentals and logistics support for clients in locations across Nigeria.
+          </p>
+          <div class="home-reach-badge">
+            <img src="assets/icons/location-pin.svg" alt="" aria-hidden="true">
+            <span>Port Harcourt, Rivers State</span>
+          </div>
         </div>
-        <p class="head-office-text">
-          From our head office in Port Harcourt, Rivers State, we coordinate security personnel, event ushers, executive car rentals and logistics support for clients in locations across Nigeria.
-        </p>
-        <a href="contact.html" class="btn btn-primary">
-          Speak with Our Team
-          <img src="assets/icons/arrow-right-white.svg" alt="" aria-hidden="true">
-        </a>
       </div>
     </section>
   </main>
 
-  <!-- Unified Global Boxed Footer (Exact Figma Component Shared Across All Pages) -->
+  <!-- Unified Global Boxed Footer -->
   <footer class="site-footer-boxed" id="contact-cta">
     <!-- Pre-footer CTA: Tell Us What You Need -->
     <div class="footer-cta-block">
