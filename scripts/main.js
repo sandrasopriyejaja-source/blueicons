@@ -617,21 +617,33 @@ function initContactForm() {
   });
 }
 
-// 6. Subtle Scroll-Triggered Entrance Animations (Key Sections Only)
+// 6. Subtle Motion & Scroll-Triggered Entrance Animations
 function initScrollAnimations() {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const targets = document.querySelectorAll('.scroll-reveal');
-  if (!targets.length) return;
+  const scrollTargets = document.querySelectorAll('.anim-appear, .anim-slide-left, .anim-slide-right, .anim-stagger-group, .anim-img-reveal, .scroll-reveal');
+  const heroTargets = document.querySelectorAll('.anim-hero-stagger');
+
+  if (!scrollTargets.length && !heroTargets.length) return;
 
   // Add activation class to html only after verifying observer support and reduced-motion preference
-  document.documentElement.classList.add('has-scroll-anim');
+  document.documentElement.classList.add('has-motion-anim', 'has-scroll-anim');
 
+  // Trigger Hero Load-in Animations after initial render tick
+  if (heroTargets.length) {
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        heroTargets.forEach(hero => hero.classList.add('is-hero-loaded'));
+      }, 60);
+    });
+  }
+
+  // IntersectionObserver for scroll-triggered elements
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
-        entry.target.classList.add('is-visible');
+        entry.target.classList.add('is-in-view', 'is-visible');
         obs.unobserve(entry.target);
       }
     });
@@ -641,7 +653,7 @@ function initScrollAnimations() {
     threshold: 0.1
   });
 
-  targets.forEach(el => {
+  scrollTargets.forEach(el => {
     observer.observe(el);
     el.addEventListener('transitionend', (e) => {
       if (e.target === el) {
@@ -653,9 +665,14 @@ function initScrollAnimations() {
 
   // Fallback safeguard: guarantee no content ever stays hidden if observer stalls
   setTimeout(() => {
-    targets.forEach(el => {
-      if (!el.classList.contains('is-visible')) {
-        el.classList.add('is-visible');
+    scrollTargets.forEach(el => {
+      if (!el.classList.contains('is-in-view')) {
+        el.classList.add('is-in-view', 'is-visible');
+      }
+    });
+    heroTargets.forEach(hero => {
+      if (!hero.classList.contains('is-hero-loaded')) {
+        hero.classList.add('is-hero-loaded');
       }
     });
   }, 3000);

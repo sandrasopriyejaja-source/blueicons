@@ -6061,45 +6061,175 @@ section {
 }
 
 /* ==========================================================================
-   SCROLL-TRIGGERED ENTRANCE ANIMATIONS (Key Sections Only)
-   - Scope: Key sections across Home, About Us, Our Services, Our Fleet
-   - Desktop: Gentle moving entrance (rise-and-fade, 650ms cubic-bezier)
-   - Mobile & Tablet: Simple appear (soft fade-in with slight rise, 500ms ease-out)
-   - Runs once when section scrolls into view
-   - Default state: fully visible (no layout shift, content never hidden if JS fails)
-   - Reduced Motion: completely disabled
+   ENHANCED MOTION & SCROLL ANIMATION SUITE
+   - Animation Types: Hero Load-in, Appear, Slide-in (L/R), Staggered Groups,
+     Image Reveal, Gentle Ambient Motion (Desktop/Tablet).
+   - Scoped strictly to Home, About Us, Our Services, Our Fleet (Contact Us untouched)
+   - Desktop (>=1025px): All types, 550–750ms with smooth cubic-bezier easing.
+   - Tablet (769px–1024px): Appear, Stagger, Image Reveal, Slide-in, Ambient Motion.
+   - Mobile (<=768px): Simpler types (Appear, Stagger, Image Reveal). Zero horizontal slide.
+   - Zero Layout Shift: Pure transform and opacity only.
+   - No Horizontal Overflow: Small offsets, clipped containers.
+   - Fail-Safe: All elements are 100% visible at rest; animation classes only hide
+     when html.has-motion-anim is verified.
+   - Reduced Motion: 100% visible with zero transitions or animations.
    ========================================================================== */
 
-/* Base fallback: at rest / no-JS state is 100% visible */
+/* 1. Base Fallback: At rest / No-JS is 100% visible */
+.anim-hero-stagger > *,
+.anim-appear,
+.anim-slide-left,
+.anim-slide-right,
+.anim-stagger-group > *,
+.anim-img-reveal,
 .scroll-reveal {
   opacity: 1;
   transform: none;
 }
 
-/* Active Scroll Animation (Only when JS confirms IntersectionObserver support & reduced motion is off) */
+/* 2. Hero Load-in Animation (Staggered fade-up on page load) */
+html.has-motion-anim .anim-hero-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+html.has-motion-anim .anim-hero-stagger.is-hero-loaded > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+html.has-motion-anim .anim-hero-stagger.is-hero-loaded > *:nth-child(1) { transition-delay: 40ms; }
+html.has-motion-anim .anim-hero-stagger.is-hero-loaded > *:nth-child(2) { transition-delay: 160ms; }
+html.has-motion-anim .anim-hero-stagger.is-hero-loaded > *:nth-child(3) { transition-delay: 280ms; }
+html.has-motion-anim .anim-hero-stagger.is-hero-loaded > *:nth-child(4) { transition-delay: 400ms; }
+html.has-motion-anim .anim-hero-stagger.is-hero-loaded > *:nth-child(5) { transition-delay: 520ms; }
+
+/* 3. Appear Animation (Soft fade-in with slight rise on scroll) */
 @media (min-width: 1025px) {
+  html.has-motion-anim .anim-appear,
   html.has-scroll-anim .scroll-reveal {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(24px);
     transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
-  html.has-scroll-anim .scroll-reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
-
 @media (max-width: 1024px) {
+  html.has-motion-anim .anim-appear,
   html.has-scroll-anim .scroll-reveal {
     opacity: 0;
     transform: translateY(12px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     will-change: opacity, transform;
   }
-  html.has-scroll-anim .scroll-reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+}
+html.has-motion-anim .anim-appear.is-in-view,
+html.has-scroll-anim .scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 4. Slide-in Animation (Alternate subtle left / right slide) */
+@media (min-width: 1025px) {
+  html.has-motion-anim .anim-slide-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  html.has-motion-anim .anim-slide-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  html.has-motion-anim .anim-slide-left {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+    will-change: opacity, transform;
+  }
+  html.has-motion-anim .anim-slide-right {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+    will-change: opacity, transform;
+  }
+}
+@media (max-width: 768px) {
+  /* Mobile gracefully falls back to vertical appear with 0px horizontal offset (no overflow) */
+  html.has-motion-anim .anim-slide-left,
+  html.has-motion-anim .anim-slide-right {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    will-change: opacity, transform;
+  }
+}
+html.has-motion-anim .anim-slide-left.is-in-view,
+html.has-motion-anim .anim-slide-right.is-in-view {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* 5. Staggered Groups (Cards, bento tiles, vehicle cards, list items in sequence) */
+@media (min-width: 1025px) {
+  html.has-motion-anim .anim-stagger-group > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+}
+@media (max-width: 1024px) {
+  html.has-motion-anim .anim-stagger-group > * {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    will-change: opacity, transform;
+  }
+}
+html.has-motion-anim .anim-stagger-group.is-in-view > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+html.has-motion-anim .anim-stagger-group.is-in-view > *:nth-child(1) { transition-delay: 0ms; }
+html.has-motion-anim .anim-stagger-group.is-in-view > *:nth-child(2) { transition-delay: 90ms; }
+html.has-motion-anim .anim-stagger-group.is-in-view > *:nth-child(3) { transition-delay: 180ms; }
+html.has-motion-anim .anim-stagger-group.is-in-view > *:nth-child(4) { transition-delay: 270ms; }
+html.has-motion-anim .anim-stagger-group.is-in-view > *:nth-child(5) { transition-delay: 360ms; }
+html.has-motion-anim .anim-stagger-group.is-in-view > *:nth-child(6) { transition-delay: 450ms; }
+
+/* 6. Image Reveal (Soft scale 1.05 -> 1 with fade) */
+html.has-motion-anim .anim-img-reveal {
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+html.has-motion-anim .anim-img-reveal.is-in-view,
+html.has-motion-anim .anim-hero-stagger.is-hero-loaded .anim-img-reveal,
+html.has-motion-anim .is-in-view .anim-img-reveal {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 7. Gentle Ambient Motion (Desktop & Tablet only - Decorative elements only, never text) */
+@keyframes ambientDrift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@media (min-width: 769px) {
+  .anim-ambient-drift {
+    animation: ambientDrift 6s ease-in-out infinite;
+    will-change: transform;
+  }
+}
+@media (max-width: 768px) {
+  .anim-ambient-drift {
+    animation: none !important;
   }
 }
 
@@ -6116,11 +6246,19 @@ section {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  html.has-motion-anim .anim-hero-stagger > *,
+  html.has-motion-anim .anim-appear,
+  html.has-motion-anim .anim-slide-left,
+  html.has-motion-anim .anim-slide-right,
+  html.has-motion-anim .anim-stagger-group > *,
+  html.has-motion-anim .anim-img-reveal,
   html.has-scroll-anim .scroll-reveal,
-  .scroll-reveal {
+  .scroll-reveal,
+  .anim-ambient-drift {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    animation: none !important;
   }
   body[data-page="about"] .bento-tile:hover,
   body[data-page="about"] .value-card-box:hover,
