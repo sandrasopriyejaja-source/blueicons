@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVehicleDetail();
   initVehicleEnquiryForm();
   initContactForm();
+  initScrollAnimations();
 });
 
 // 1. Mobile Menu Toggle
@@ -614,4 +615,48 @@ function initContactForm() {
       setTimeout(() => { isSubmitting = false; }, 3000);
     }
   });
+}
+
+// 6. Subtle Scroll-Triggered Entrance Animations (Key Sections Only)
+function initScrollAnimations() {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const targets = document.querySelectorAll('.scroll-reveal');
+  if (!targets.length) return;
+
+  // Add activation class to html only after verifying observer support and reduced-motion preference
+  document.documentElement.classList.add('has-scroll-anim');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.1
+  });
+
+  targets.forEach(el => {
+    observer.observe(el);
+    el.addEventListener('transitionend', (e) => {
+      if (e.target === el) {
+        el.style.transform = 'none';
+        el.style.willChange = 'auto';
+      }
+    }, { once: true });
+  });
+
+  // Fallback safeguard: guarantee no content ever stays hidden if observer stalls
+  setTimeout(() => {
+    targets.forEach(el => {
+      if (!el.classList.contains('is-visible')) {
+        el.classList.add('is-visible');
+      }
+    });
+  }, 3000);
 }

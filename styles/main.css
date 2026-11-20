@@ -5396,34 +5396,51 @@ section {
     text-decoration: none !important;
   }
 
-  /* Section 3: Chauffeur Services Banner */
+  /* Section 3: Chauffeur Services Banner on Mobile (Full width edge-to-edge, zero radius matching screenshot) */
   body[data-page="fleet"] .fleet-chauffeur-section {
     padding: 28px 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  body[data-page="fleet"] .fleet-chauffeur-section .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
   body[data-page="fleet"] .chauffeur-gold-banner {
     display: flex !important;
     flex-direction: column !important;
-    border-radius: 24px !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
     background-color: var(--accent-strong, #b88b45) !important;
     min-height: auto !important;
+    width: 100% !important;
+    margin: 0 !important;
   }
   body[data-page="fleet"] .chauffeur-banner-media {
     width: 100% !important;
-    height: 240px !important;
-    min-height: 240px !important;
+    height: 280px !important;
+    min-height: 280px !important;
     overflow: hidden !important;
+    border-radius: 0 !important;
   }
   body[data-page="fleet"] .chauffeur-banner-media img {
     width: 100% !important;
     height: 100% !important;
+    min-height: 280px !important;
     object-fit: cover !important;
+    border-radius: 0 !important;
     display: block !important;
   }
   body[data-page="fleet"] .chauffeur-banner-content {
-    padding: 28px 20px !important;
+    padding: 36px 20px 32px !important;
     display: flex !important;
     flex-direction: column !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   body[data-page="fleet"] .chauffeur-banner-content .eyebrow {
     font-size: 13px !important;
@@ -6044,6 +6061,49 @@ section {
 }
 
 /* ==========================================================================
+   SCROLL-TRIGGERED ENTRANCE ANIMATIONS (Key Sections Only)
+   - Scope: Key sections across Home, About Us, Our Services, Our Fleet
+   - Desktop: Gentle moving entrance (rise-and-fade, 650ms cubic-bezier)
+   - Mobile & Tablet: Simple appear (soft fade-in with slight rise, 500ms ease-out)
+   - Runs once when section scrolls into view
+   - Default state: fully visible (no layout shift, content never hidden if JS fails)
+   - Reduced Motion: completely disabled
+   ========================================================================== */
+
+/* Base fallback: at rest / no-JS state is 100% visible */
+.scroll-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Active Scroll Animation (Only when JS confirms IntersectionObserver support & reduced motion is off) */
+@media (min-width: 1025px) {
+  html.has-scroll-anim .scroll-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  html.has-scroll-anim .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  html.has-scroll-anim .scroll-reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    will-change: opacity, transform;
+  }
+  html.has-scroll-anim .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
    REDUCED MOTION SUPPORT
    Disables all transitions, animations, and smooth scrolls when requested.
    ========================================================================== */
@@ -6055,6 +6115,12 @@ section {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  html.has-scroll-anim .scroll-reveal,
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
   body[data-page="about"] .bento-tile:hover,
   body[data-page="about"] .value-card-box:hover,
