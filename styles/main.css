@@ -6480,6 +6480,10 @@ body[data-page="vehicle-detail"] .vehicle-form-group input {
     object-fit: cover !important;
     border-radius: 20px !important;
   }
+  body[data-page="contact"] .contact-help-section {
+    padding-left: var(--content-padding) !important;
+    padding-right: var(--content-padding) !important;
+  }
 }
 
 /* ==========================================================================
