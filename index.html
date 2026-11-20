@@ -25,6 +25,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/images/hero-right.webp" fetchpriority="high" type="image/webp">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body data-page="home">
@@ -37,7 +38,7 @@
         <div class="home-hero-left">
           <header class="home-hero-nav">
             <a href="index.html" class="brand-logo-wrap" aria-label="BLUE_ICONS Home">
-              <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo">
+              <img src="assets/images/logo.webp" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo" width="140" height="48" fetchpriority="high">
             </a>
             <nav class="site-nav" aria-label="Main Navigation">
               <ul class="nav-links">
@@ -69,7 +70,7 @@
             <div class="hero-cta-group">
               <a href="services.html" class="btn btn-primary">
                 Explore Our Services
-                <img src="assets/icons/arrow-right-white.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/arrow-right-white.svg" alt="" aria-hidden="true" width="16" height="16">
               </a>
               <a href="contact.html" class="btn btn-outline">
                 Request a Service
@@ -80,22 +81,22 @@
           <!-- 3 Cascading Overlapping Cards -->
           <div class="hero-cards-stack">
             <div class="hero-card-item hero-card-1">
-              <img src="assets/images/hero-card-1.png" alt="BLUE_ICONS Prado Fleet">
+              <img src="assets/images/hero-card-1.webp" alt="BLUE_ICONS Prado Fleet" width="564" height="266">
             </div>
             <div class="hero-card-item hero-card-2">
-              <img src="assets/images/hero-card-2.png" alt="BLUE_ICONS Event Ushers">
+              <img src="assets/images/hero-card-2.webp" alt="BLUE_ICONS Event Ushers" width="522" height="222">
             </div>
             <div class="hero-card-item hero-card-3">
-              <img src="assets/images/hero-card-3.png" alt="BLUE_ICONS Professional Escorts">
+              <img src="assets/images/hero-card-3.webp" alt="BLUE_ICONS Professional Escorts" width="469" height="165">
             </div>
           </div>
         </div>
 
         <!-- Right Side: Full-Height Clean Video -->
         <div class="home-hero-right">
-          <video class="home-hero-video anim-img-reveal" autoplay loop muted playsinline poster="assets/images/hero-right.png">
-            <source src="assets/videos/homepage-hero.mp4" type="video/mp4">
-            <img src="assets/images/hero-right.png" alt="BLUE_ICONS Professional Service in Nigeria">
+          <video class="home-hero-video anim-img-reveal" autoplay loop muted playsinline preload="metadata" poster="assets/images/hero-right.webp" width="725" height="1072">
+            <source media="(min-width: 1025px)" src="assets/videos/homepage-hero.mp4" type="video/mp4">
+            <img src="assets/images/hero-right.webp" alt="BLUE_ICONS Professional Service in Nigeria" width="725" height="1072">
           </video>
         </div>
       </div>
@@ -120,7 +121,10 @@
           <!-- Col 1: Photo top, Card 01 bottom -->
           <div class="checkerboard-col">
             <div class="checkerboard-media">
-              <img src="assets/images/home-grid-ushers-female.png" alt="BLUE_ICONS Event Ushers in formal attire">
+              <picture>
+                <source srcset="assets/images/home-grid-ushers-female-mobile.webp 500w, assets/images/home-grid-ushers-female.webp 720w" sizes="(max-width: 768px) 100vw, 360px" type="image/webp">
+                <img src="assets/images/home-grid-ushers-female.webp" alt="BLUE_ICONS Event Ushers in formal attire" loading="lazy" decoding="async" width="658" height="716">
+              </picture>
             </div>
             <div class="checkerboard-card">
               <span class="checkerboard-num">01</span>
@@ -137,14 +141,20 @@
               <p>Clear communication and practical coordination around your event, journey or security requirements.</p>
             </div>
             <div class="checkerboard-media">
-              <img src="assets/images/home-grid-ushers-male.png" alt="BLUE_ICONS Protocol and ushering team">
+              <picture>
+                <source srcset="assets/images/home-grid-ushers-male-mobile.webp 500w, assets/images/home-grid-ushers-male.webp 720w" sizes="(max-width: 768px) 100vw, 360px" type="image/webp">
+                <img src="assets/images/home-grid-ushers-male.webp" alt="BLUE_ICONS Protocol and ushering team" loading="lazy" decoding="async" width="656" height="714">
+              </picture>
             </div>
           </div>
 
           <!-- Col 3: Photo top, Card 03 bottom -->
           <div class="checkerboard-col">
             <div class="checkerboard-media">
-              <img src="assets/images/home-grid-prado.png" alt="BLUE_ICONS Executive Prado Fleet">
+              <picture>
+                <source srcset="assets/images/home-grid-prado-mobile.webp 500w, assets/images/home-grid-prado.webp 720w" sizes="(max-width: 768px) 100vw, 360px" type="image/webp">
+                <img src="assets/images/home-grid-prado.webp" alt="BLUE_ICONS Executive Prado Fleet" loading="lazy" decoding="async" width="658" height="714">
+              </picture>
             </div>
             <div class="checkerboard-card">
               <span class="checkerboard-num">03</span>
@@ -161,7 +171,10 @@
               <p>We listen to what you need and keep you informed from your first enquiry to service delivery.</p>
             </div>
             <div class="checkerboard-media">
-              <img src="assets/images/home-grid-escorts.png" alt="BLUE_ICONS Armed Security Personnel &amp; Escorts">
+              <picture>
+                <source srcset="assets/images/home-grid-escorts-mobile.webp 500w, assets/images/home-grid-escorts.webp 720w" sizes="(max-width: 768px) 100vw, 360px" type="image/webp">
+                <img src="assets/images/home-grid-escorts.webp" alt="BLUE_ICONS Armed Security Personnel &amp; Escorts" loading="lazy" decoding="async" width="658" height="716">
+              </picture>
             </div>
           </div>
         </div>
@@ -180,7 +193,7 @@
           <!-- Card 1: 1. Security Services -->
           <div class="home-division-card">
             <div class="division-card-media">
-              <img src="assets/images/security-services.png" alt="BLUE_ICONS Security Guards &amp; Escorts">
+              <img src="assets/images/security-services.webp" alt="BLUE_ICONS Security Guards &amp; Escorts" loading="lazy" decoding="async" width="445" height="285">
             </div>
             <div class="division-card-body">
               <h3>1. Security Services</h3>
@@ -204,7 +217,7 @@
           <!-- Card 2: 2. Events & Ushering -->
           <div class="home-division-card">
             <div class="division-card-media">
-              <img src="assets/images/event-ushers.png" alt="BLUE_ICONS Professional Event Ushers">
+              <img src="assets/images/event-ushers.webp" alt="BLUE_ICONS Professional Event Ushers" loading="lazy" decoding="async" width="445" height="285">
             </div>
             <div class="division-card-body">
               <h3>2. Events &amp; Ushering</h3>
@@ -228,7 +241,7 @@
           <!-- Card 3: 3. Executive Mobility -->
           <div class="home-division-card">
             <div class="division-card-media">
-              <img src="assets/images/executive-mobility.png" alt="BLUE_ICONS Executive Mobility Fleet">
+              <img src="assets/images/executive-mobility.webp" alt="BLUE_ICONS Executive Mobility Fleet" loading="lazy" decoding="async" width="445" height="285">
             </div>
             <div class="division-card-body">
               <h3>3. Executive Mobility</h3>
@@ -257,7 +270,10 @@
       <div class="container">
         <div class="home-partner-split">
           <div class="home-partner-media-wrap anim-slide-left">
-            <img src="assets/images/home-partner-security.png" alt="BLUE_ICONS Professional Security Team" class="home-partner-img">
+            <picture>
+              <source srcset="assets/images/home-partner-security-mobile.webp 640w, assets/images/home-partner-security.webp 1080w" sizes="(max-width: 768px) 100vw, 540px" type="image/webp">
+              <img src="assets/images/home-partner-security.webp" alt="BLUE_ICONS Professional Security Team" class="home-partner-img" loading="lazy" decoding="async" width="1080" height="1380">
+            </picture>
             <div class="home-partner-badge anim-ambient-drift">
               <span>Practical support for people, events and businesses.</span>
             </div>
@@ -270,23 +286,23 @@
             </p>
             <ul class="home-partner-checklist">
               <li>
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true" width="20" height="20">
                 <span>Skilled and professional personnel</span>
               </li>
               <li>
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true" width="20" height="20">
                 <span>Reliable service delivery</span>
               </li>
               <li>
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true" width="20" height="20">
                 <span>Solutions tailored to individual requirements</span>
               </li>
               <li>
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true" width="20" height="20">
                 <span>Nationwide service coverage</span>
               </li>
               <li>
-                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/check-circle-gold.svg" alt="" aria-hidden="true" width="20" height="20">
                 <span>A customer-focused approach</span>
               </li>
             </ul>
@@ -305,7 +321,10 @@
       <div class="container">
         <div class="founder-card-frame23 anim-appear">
           <div class="founder-card-media">
-            <img src="assets/images/founder-desk.jpg" alt="Sandra Sopriye Jaja, Founder &amp; Creative Director">
+            <picture>
+              <source srcset="assets/images/founder-desk-mobile.webp 600w, assets/images/founder-desk.webp 864w" sizes="(max-width: 768px) 100vw, 432px" type="image/webp">
+              <img src="assets/images/founder-desk.webp" alt="Sandra Sopriye Jaja, Founder &amp; Creative Director" loading="lazy" decoding="async" width="864" height="1184">
+            </picture>
           </div>
           <div class="founder-card-content">
             <span class="founder-card-eyebrow">FOUNDER &amp; CREATIVE DIRECTOR</span>
@@ -363,7 +382,7 @@
       <!-- Col 1: Brand -->
       <div class="footer-brand-col">
         <div class="footer-brandmark">
-          <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="footer-brandmark-logo">
+          <img src="assets/images/logo.webp" alt="BLUE_ICONS GLOBAL LIMITED" class="footer-brandmark-logo" loading="lazy" decoding="async" width="140" height="48">
         </div>
         <p class="footer-brand-desc">
           Security guards and escorts, event ushers, executive car hire, chauffeur services and logistics support in Port Harcourt and across Nigeria.

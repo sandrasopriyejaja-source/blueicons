@@ -91,6 +91,12 @@ body {
 img, svg {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+
+/* Subtle image background placeholder before load */
+img:not([src=""]):not([src*=".svg"]) {
+  background-color: rgba(7, 27, 51, 0.04);
 }
 
 a {

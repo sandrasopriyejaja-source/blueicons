@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroVideo();
   initMobileMenu();
   initWhoWeAreCarousel();
   initVehicleDetail();
@@ -194,14 +195,14 @@ const VEHICLE_CATALOG = {
     specs: '4x4 Automatic · 7 Seats',
     photoCountText: '8 supplied photographs',
     images: [
-      'assets/vehicles/land-cruiser/thumb-1.jpeg',
-      'assets/vehicles/land-cruiser/thumb-2.jpeg',
-      'assets/vehicles/land-cruiser/thumb-3.jpeg',
-      'assets/vehicles/land-cruiser/thumb-4.jpeg',
-      'assets/vehicles/land-cruiser/thumb-5.jpeg',
-      'assets/vehicles/land-cruiser/thumb-6.jpeg',
-      'assets/vehicles/land-cruiser/thumb-7.jpeg',
-      'assets/vehicles/land-cruiser/thumb-8.jpeg'
+      'assets/vehicles/land-cruiser/thumb-1.webp',
+      'assets/vehicles/land-cruiser/thumb-2.webp',
+      'assets/vehicles/land-cruiser/thumb-3.webp',
+      'assets/vehicles/land-cruiser/thumb-4.webp',
+      'assets/vehicles/land-cruiser/thumb-5.webp',
+      'assets/vehicles/land-cruiser/thumb-6.webp',
+      'assets/vehicles/land-cruiser/thumb-7.webp',
+      'assets/vehicles/land-cruiser/thumb-8.webp'
     ]
   },
   'prado': {
@@ -216,14 +217,14 @@ const VEHICLE_CATALOG = {
     specs: '4x4 Automatic · 7 Seats',
     photoCountText: '8 supplied photographs',
     images: [
-      'assets/vehicles/prado/thumb-1.jpeg',
-      'assets/vehicles/prado/thumb-2.jpeg',
-      'assets/vehicles/prado/thumb-3.jpeg',
-      'assets/vehicles/prado/thumb-4.jpeg',
-      'assets/vehicles/prado/thumb-5.jpeg',
-      'assets/vehicles/prado/thumb-6.jpeg',
-      'assets/vehicles/prado/thumb-7.jpeg',
-      'assets/vehicles/prado/thumb-8.jpeg'
+      'assets/vehicles/prado/thumb-1.webp',
+      'assets/vehicles/prado/thumb-2.webp',
+      'assets/vehicles/prado/thumb-3.webp',
+      'assets/vehicles/prado/thumb-4.webp',
+      'assets/vehicles/prado/thumb-5.webp',
+      'assets/vehicles/prado/thumb-6.webp',
+      'assets/vehicles/prado/thumb-7.webp',
+      'assets/vehicles/prado/thumb-8.webp'
     ]
   },
   'hilux': {
@@ -238,14 +239,14 @@ const VEHICLE_CATALOG = {
     specs: '4x4 Manual / Auto · 5 Seats',
     photoCountText: '8 supplied photographs',
     images: [
-      'assets/vehicles/hilux/thumb-1.jpeg',
-      'assets/vehicles/hilux/thumb-2.jpeg',
-      'assets/vehicles/hilux/thumb-3.jpeg',
-      'assets/vehicles/hilux/thumb-4.jpeg',
-      'assets/vehicles/hilux/thumb-5.jpeg',
-      'assets/vehicles/hilux/thumb-6.jpeg',
-      'assets/vehicles/hilux/thumb-7.jpeg',
-      'assets/vehicles/hilux/thumb-8.jpeg'
+      'assets/vehicles/hilux/thumb-1.webp',
+      'assets/vehicles/hilux/thumb-2.webp',
+      'assets/vehicles/hilux/thumb-3.webp',
+      'assets/vehicles/hilux/thumb-4.webp',
+      'assets/vehicles/hilux/thumb-5.webp',
+      'assets/vehicles/hilux/thumb-6.webp',
+      'assets/vehicles/hilux/thumb-7.webp',
+      'assets/vehicles/hilux/thumb-8.webp'
     ]
   },
   'hiace': {
@@ -260,14 +261,14 @@ const VEHICLE_CATALOG = {
     specs: 'Automatic · 14-16 Seats',
     photoCountText: '8 supplied photographs',
     images: [
-      'assets/vehicles/hiace/thumb-1.jpeg',
-      'assets/vehicles/hiace/thumb-2.jpeg',
-      'assets/vehicles/hiace/thumb-3.jpeg',
-      'assets/vehicles/hiace/thumb-4.jpeg',
-      'assets/vehicles/hiace/main.jpeg',
-      'assets/vehicles/hiace/thumb-1.jpeg',
-      'assets/vehicles/hiace/thumb-2.jpeg',
-      'assets/vehicles/hiace/thumb-3.jpeg'
+      'assets/vehicles/hiace/thumb-1.webp',
+      'assets/vehicles/hiace/thumb-2.webp',
+      'assets/vehicles/hiace/thumb-3.webp',
+      'assets/vehicles/hiace/thumb-4.webp',
+      'assets/vehicles/hiace/main.webp',
+      'assets/vehicles/hiace/thumb-1.webp',
+      'assets/vehicles/hiace/thumb-2.webp',
+      'assets/vehicles/hiace/thumb-3.webp'
     ]
   },
   'coaster': {
@@ -282,14 +283,14 @@ const VEHICLE_CATALOG = {
     specs: 'Manual Diesel · 30 Seats',
     photoCountText: '8 supplied photographs',
     images: [
-      'assets/vehicles/coaster/thumb-1.jpeg',
-      'assets/vehicles/coaster/thumb-2.jpeg',
-      'assets/vehicles/coaster/thumb-3.jpeg',
-      'assets/vehicles/coaster/thumb-4.jpeg',
-      'assets/vehicles/coaster/main.jpeg',
-      'assets/vehicles/coaster/thumb-1.jpeg',
-      'assets/vehicles/coaster/thumb-2.jpeg',
-      'assets/vehicles/coaster/thumb-3.jpeg'
+      'assets/vehicles/coaster/thumb-1.webp',
+      'assets/vehicles/coaster/thumb-2.webp',
+      'assets/vehicles/coaster/thumb-3.webp',
+      'assets/vehicles/coaster/thumb-4.webp',
+      'assets/vehicles/coaster/main.webp',
+      'assets/vehicles/coaster/thumb-1.webp',
+      'assets/vehicles/coaster/thumb-2.webp',
+      'assets/vehicles/coaster/thumb-3.webp'
     ]
   },
   'escalade': {
@@ -304,14 +305,14 @@ const VEHICLE_CATALOG = {
     specs: 'Automatic · 7 Seats',
     photoCountText: '8 supplied photographs',
     images: [
-      'assets/vehicles/escalade/thumb-1.jpeg',
-      'assets/vehicles/escalade/thumb-2.jpeg',
-      'assets/vehicles/escalade/thumb-3.jpeg',
-      'assets/vehicles/escalade/thumb-4.jpeg',
-      'assets/vehicles/escalade/thumb-5.jpeg',
-      'assets/vehicles/escalade/thumb-6.jpeg',
-      'assets/vehicles/escalade/thumb-7.jpeg',
-      'assets/vehicles/escalade/thumb-8.jpeg'
+      'assets/vehicles/escalade/thumb-1.webp',
+      'assets/vehicles/escalade/thumb-2.webp',
+      'assets/vehicles/escalade/thumb-3.webp',
+      'assets/vehicles/escalade/thumb-4.webp',
+      'assets/vehicles/escalade/thumb-5.webp',
+      'assets/vehicles/escalade/thumb-6.webp',
+      'assets/vehicles/escalade/thumb-7.webp',
+      'assets/vehicles/escalade/thumb-8.webp'
     ]
   }
 };
@@ -367,8 +368,8 @@ function initVehicleDetail() {
 
   // Keep the exact design background vehicle image specified in Figma Node 104:32
   const enquiryBg = document.getElementById('enquiryVehicleBg');
-  if (enquiryBg && !enquiryBg.getAttribute('src')) {
-    enquiryBg.src = 'assets/images/enquiry-vehicle-design.jpeg';
+  if (enquiryBg && (!enquiryBg.getAttribute('src') || enquiryBg.getAttribute('src').endsWith('.jpeg'))) {
+    enquiryBg.src = 'assets/images/enquiry-vehicle-design.webp';
   }
   const waLink = document.getElementById('whatsappVehicleLink');
   if (waLink) {
@@ -725,4 +726,16 @@ function initScrollAnimations() {
       }
     });
   }, 3000);
+}
+
+// 7. Hero Video Viewport Guard (Prevents video downloads on tablet & mobile where hidden)
+function initHeroVideo() {
+  const video = document.querySelector('.home-hero-video');
+  if (!video) return;
+  if (window.innerWidth <= 1024) {
+    const source = video.querySelector('source');
+    if (source) source.removeAttribute('src');
+    video.removeAttribute('src');
+    video.load();
+  }
 }

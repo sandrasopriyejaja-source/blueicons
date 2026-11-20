@@ -25,6 +25,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/images/about-hero.webp" fetchpriority="high" type="image/webp">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body data-page="about">
@@ -37,7 +38,7 @@
         <div class="page-hero-left">
           <header class="home-hero-nav">
             <a href="index.html" class="brand-logo-wrap" aria-label="BLUE_ICONS Home">
-              <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo">
+              <img src="assets/images/logo.webp" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo" width="140" height="48" fetchpriority="high">
             </a>
             <nav class="site-nav" aria-label="Main Navigation">
               <ul class="nav-links">
@@ -70,7 +71,10 @@
 
         <!-- Right Side: Clean curved media image -->
         <div class="page-hero-right anim-img-reveal">
-          <img src="assets/images/about-hero.png" alt="BLUE_ICONS Event &amp; Operational Support">
+          <picture>
+            <source srcset="assets/images/about-hero-mobile.webp 720w, assets/images/about-hero.webp 1320w" sizes="(max-width: 768px) 100vw, 640px" type="image/webp">
+            <img src="assets/images/about-hero.webp" alt="BLUE_ICONS Event &amp; Operational Support" fetchpriority="high" loading="eager" width="1320" height="956">
+          </picture>
         </div>
       </div>
     </section>
@@ -110,12 +114,12 @@
 
           <!-- Tile 2: Image 1 (Ushers under canopy) -->
           <div class="bento-tile bento-media tile-ushers">
-            <img src="assets/images/about-standards-1.png" alt="BLUE_ICONS Professional Event Ushers">
+            <img src="assets/images/about-standards-1.webp" alt="BLUE_ICONS Professional Event Ushers" loading="lazy" decoding="async" width="781" height="420">
           </div>
 
           <!-- Tile 3: Image 2 (5-Photo collage) -->
           <div class="bento-tile bento-media tile-collage">
-            <img src="assets/images/about-standards-2.png" alt="BLUE_ICONS Security and Fleet Services">
+            <img src="assets/images/about-standards-2.webp" alt="BLUE_ICONS Security and Fleet Services" loading="lazy" decoding="async" width="781" height="420">
           </div>
 
           <!-- Tile 4: Card 02 (Dark Navy card) -->
@@ -178,7 +182,7 @@
         <div class="about-founder-pill-container">
           <!-- Left: Founder Image (Photo on Left on Desktop, Top on Mobile) -->
           <div class="about-founder-image anim-slide-left">
-            <img src="assets/images/about-founder.png" alt="Sandra Sopriye Jaja, Founder &amp; Creative Director">
+            <img src="assets/images/about-founder.webp" alt="Sandra Sopriye Jaja, Founder &amp; Creative Director" loading="lazy" decoding="async" width="960" height="1280">
           </div>
           <!-- Right: Founder Information & Quote on Gold Background -->
           <div class="about-founder-info anim-slide-right">
@@ -262,7 +266,7 @@
       <!-- Col 1: Brand -->
       <div class="footer-brand-col">
         <div class="footer-brandmark">
-          <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="footer-brandmark-logo">
+          <img src="assets/images/logo.webp" alt="BLUE_ICONS GLOBAL LIMITED" class="footer-brandmark-logo" loading="lazy" decoding="async" width="140" height="48">
         </div>
         <p class="footer-brand-desc">
           Security guards and escorts, event ushers, executive car hire, chauffeur services and logistics support in Port Harcourt and across Nigeria.

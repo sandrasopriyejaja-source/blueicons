@@ -25,6 +25,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/images/fleet-hero.webp" fetchpriority="high" type="image/webp">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body data-page="fleet">
@@ -38,7 +39,7 @@
           <!-- Integrated Header Navigation (Figma Node 71:336) -->
           <header class="home-hero-nav">
             <a href="index.html" class="brand-logo-wrap" aria-label="BLUE_ICONS Home">
-              <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo">
+              <img src="assets/images/logo.webp" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo" width="140" height="48" fetchpriority="high">
             </a>
             <nav class="site-nav" aria-label="Main Navigation">
               <ul class="nav-links">
@@ -72,7 +73,10 @@
 
         <!-- Right Side: Clean curved media image (Figma Node 71:327) -->
         <div class="page-hero-right fleet-hero-right anim-img-reveal">
-          <img src="assets/images/fleet-hero.png" alt="BLUE_ICONS Executive Car Hire Fleet in Nigeria">
+          <picture>
+            <source srcset="assets/images/fleet-hero-mobile.webp 720w, assets/images/fleet-hero.webp 1320w" sizes="(max-width: 768px) 100vw, 640px" type="image/webp">
+            <img src="assets/images/fleet-hero.webp" alt="BLUE_ICONS Executive Car Hire Fleet in Nigeria" fetchpriority="high" loading="eager" width="1320" height="1131">
+          </picture>
         </div>
       </div>
     </section>
@@ -105,7 +109,7 @@
           <!-- 01: Toyota Hilux -->
           <div class="vehicle-card">
             <div class="vehicle-card-media">
-              <img src="assets/vehicles/hilux/main.jpeg" alt="Toyota Hilux Utility Escort Truck">
+              <img src="assets/vehicles/hilux/main.webp" alt="Toyota Hilux Utility Escort Truck" loading="lazy" decoding="async" width="1040" height="780">
             </div>
             <div class="vehicle-card-body">
               <h3>Toyota Hilux</h3>
@@ -114,7 +118,7 @@
               </p>
               <a href="vehicle-detail.html?vehicle=hilux" class="vehicle-card-link">
                 <span>View Details</span>
-                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true" width="16" height="16">
               </a>
             </div>
           </div>
@@ -122,7 +126,7 @@
           <!-- 02: Toyota Hiace Buses -->
           <div class="vehicle-card">
             <div class="vehicle-card-media">
-              <img src="assets/vehicles/hiace/main.jpeg" alt="Toyota Hiace Passenger Bus">
+              <img src="assets/vehicles/hiace/main.webp" alt="Toyota Hiace Passenger Bus" loading="lazy" decoding="async" width="1206" height="682">
             </div>
             <div class="vehicle-card-body">
               <h3>Toyota Hiace Buses</h3>
@@ -131,7 +135,7 @@
               </p>
               <a href="vehicle-detail.html?vehicle=hiace" class="vehicle-card-link">
                 <span>View Details</span>
-                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true" width="16" height="16">
               </a>
             </div>
           </div>
@@ -139,7 +143,7 @@
           <!-- 03: Coaster Buses -->
           <div class="vehicle-card">
             <div class="vehicle-card-media">
-              <img src="assets/vehicles/coaster/main.jpeg" alt="Toyota Coaster Executive Bus">
+              <img src="assets/vehicles/coaster/main.webp" alt="Toyota Coaster Executive Bus" loading="lazy" decoding="async" width="1206" height="906">
             </div>
             <div class="vehicle-card-body">
               <h3>Coaster Buses</h3>
@@ -148,7 +152,7 @@
               </p>
               <a href="vehicle-detail.html?vehicle=coaster" class="vehicle-card-link">
                 <span>View Details</span>
-                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true" width="16" height="16">
               </a>
             </div>
           </div>
@@ -156,7 +160,7 @@
           <!-- 04: Toyota Prado SUVs -->
           <div class="vehicle-card">
             <div class="vehicle-card-media">
-              <img src="assets/vehicles/prado/main.jpeg" alt="Toyota Prado Luxury SUV">
+              <img src="assets/vehicles/prado/main.webp" alt="Toyota Prado Luxury SUV" loading="lazy" decoding="async" width="810" height="1080">
             </div>
             <div class="vehicle-card-body">
               <h3>Toyota Prado SUVs</h3>
@@ -165,7 +169,7 @@
               </p>
               <a href="vehicle-detail.html?vehicle=prado" class="vehicle-card-link">
                 <span>View Details</span>
-                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true" width="16" height="16">
               </a>
             </div>
           </div>
@@ -173,7 +177,7 @@
           <!-- 05: Toyota Land Cruiser -->
           <div class="vehicle-card">
             <div class="vehicle-card-media">
-              <img src="assets/vehicles/land-cruiser/main.jpeg" alt="Toyota Land Cruiser V8 Executive SUV">
+              <img src="assets/vehicles/land-cruiser/main.webp" alt="Toyota Land Cruiser V8 Executive SUV" loading="lazy" decoding="async" width="1080" height="810">
             </div>
             <div class="vehicle-card-body">
               <h3>Toyota Land Cruiser</h3>
@@ -182,7 +186,7 @@
               </p>
               <a href="vehicle-detail.html?vehicle=land-cruiser" class="vehicle-card-link">
                 <span>View Details</span>
-                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true" width="16" height="16">
               </a>
             </div>
           </div>
@@ -190,7 +194,7 @@
           <!-- 06: Escalade -->
           <div class="vehicle-card">
             <div class="vehicle-card-media">
-              <img src="assets/vehicles/escalade/main.jpeg" alt="Cadillac Escalade Luxury SUV">
+              <img src="assets/vehicles/escalade/main.webp" alt="Cadillac Escalade Luxury SUV" loading="lazy" decoding="async" width="1080" height="810">
             </div>
             <div class="vehicle-card-body">
               <h3>Escalade</h3>
@@ -199,7 +203,7 @@
               </p>
               <a href="vehicle-detail.html?vehicle=escalade" class="vehicle-card-link">
                 <span>View Details</span>
-                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true">
+                <img src="assets/icons/arrow-right-gold.svg" alt="" aria-hidden="true" width="16" height="16">
               </a>
             </div>
           </div>
@@ -214,7 +218,7 @@
         <div class="chauffeur-gold-banner">
           <!-- Left: Chauffeur vehicle image -->
           <div class="chauffeur-banner-media anim-slide-left">
-            <img src="assets/images/chauffeur.png" alt="BLUE_ICONS Professional Chauffeur Services">
+            <img src="assets/images/chauffeur.webp" alt="BLUE_ICONS Professional Chauffeur Services" loading="lazy" decoding="async" width="695" height="833">
           </div>
 
           <!-- Right: Content in White -->
@@ -278,7 +282,7 @@
       <!-- Col 1: Brand -->
       <div class="footer-brand-col">
         <div class="footer-brandmark">
-          <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="footer-brandmark-logo">
+          <img src="assets/images/logo.webp" alt="BLUE_ICONS GLOBAL LIMITED" class="footer-brandmark-logo" loading="lazy" decoding="async" width="140" height="48">
         </div>
         <p class="footer-brand-desc">
           Security guards and escorts, event ushers, executive car hire, chauffeur services and logistics support in Port Harcourt and across Nigeria.

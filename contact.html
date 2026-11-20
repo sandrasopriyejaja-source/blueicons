@@ -25,6 +25,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/images/contact-hero.webp" fetchpriority="high" type="image/webp">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body data-page="contact">
@@ -38,7 +39,7 @@
           <!-- Integrated Header Navigation (Figma Node 37:286) -->
           <header class="home-hero-nav">
             <a href="index.html" class="brand-logo-wrap" aria-label="BLUE_ICONS Home">
-              <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo">
+              <img src="assets/images/logo.webp" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo" width="140" height="48" fetchpriority="high">
             </a>
             <nav class="site-nav" aria-label="Main Navigation">
               <ul class="nav-links">
@@ -72,7 +73,10 @@
 
         <!-- Right Side: Black SUV at PYALE WorkHub Image (Figma Node 37:277) -->
         <div class="page-hero-right anim-img-reveal">
-          <img src="assets/images/contact-hero.png" alt="BLUE_ICONS Support &amp; Mobility in Nigeria">
+          <picture>
+            <source srcset="assets/images/contact-hero-mobile.webp 640w, assets/images/contact-hero.webp 1000w" sizes="(max-width: 768px) 100vw, 640px" type="image/webp">
+            <img src="assets/images/contact-hero.webp" alt="BLUE_ICONS Support &amp; Mobility in Nigeria" fetchpriority="high" loading="eager" width="725" height="525">
+          </picture>
         </div>
       </div>
     </section>
@@ -815,7 +819,7 @@
       <!-- Col 1: Brand -->
       <div class="footer-brand-col">
         <div class="footer-brandmark">
-          <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="footer-brandmark-logo">
+          <img src="assets/images/logo.webp" alt="BLUE_ICONS GLOBAL LIMITED" class="footer-brandmark-logo" loading="lazy" decoding="async" width="140" height="48">
         </div>
         <p class="footer-brand-desc">
           Security guards and escorts, event ushers, executive car hire, chauffeur services and logistics support in Port Harcourt and across Nigeria.

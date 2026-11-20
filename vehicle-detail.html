@@ -25,6 +25,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/vehicles/land-cruiser/thumb-1.webp" fetchpriority="high" type="image/webp">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body data-page="vehicle-detail">
@@ -36,7 +37,7 @@
         <!-- Integrated Header Navigation -->
         <header class="home-hero-nav">
           <a href="index.html" class="brand-logo-wrap" aria-label="BLUE_ICONS Home">
-            <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo">
+            <img src="assets/images/logo.webp" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo" width="140" height="48" fetchpriority="high">
           </a>
           <nav class="site-nav" aria-label="Main Navigation">
             <ul class="nav-links">
@@ -95,19 +96,19 @@
           <!-- Top Row: Big Exterior on Left (w ~885px, h ~529px) + 3 Interior on Right (1 top, 2 split bottom) -->
           <div class="gallery-top-row">
             <div class="gallery-main-frame">
-              <img id="gallery-img-1" src="assets/vehicles/land-cruiser/thumb-1.jpeg" alt="Main Exterior Photograph">
+              <img id="gallery-img-1" src="assets/vehicles/land-cruiser/thumb-1.webp" alt="Main Exterior Photograph" fetchpriority="high" loading="eager" width="885" height="529">
             </div>
 
             <div class="gallery-right-stack">
               <div class="gallery-stack-top">
-                <img id="gallery-img-2" src="assets/vehicles/land-cruiser/thumb-2.jpeg" alt="Vehicle Angle 2">
+                <img id="gallery-img-2" src="assets/vehicles/land-cruiser/thumb-2.webp" alt="Vehicle Angle 2" loading="lazy" decoding="async" width="400" height="250">
               </div>
               <div class="gallery-stack-bottom-split">
                 <div class="gallery-stack-sub">
-                  <img id="gallery-img-3" src="assets/vehicles/land-cruiser/thumb-3.jpeg" alt="Vehicle Angle 3">
+                  <img id="gallery-img-3" src="assets/vehicles/land-cruiser/thumb-3.webp" alt="Vehicle Angle 3" loading="lazy" decoding="async" width="200" height="260">
                 </div>
                 <div class="gallery-stack-sub">
-                  <img id="gallery-img-4" src="assets/vehicles/land-cruiser/thumb-4.jpeg" alt="Vehicle Angle 4">
+                  <img id="gallery-img-4" src="assets/vehicles/land-cruiser/thumb-4.webp" alt="Vehicle Angle 4" loading="lazy" decoding="async" width="200" height="260">
                 </div>
               </div>
             </div>
@@ -116,16 +117,16 @@
           <!-- Bottom Row: 4 Additional Angles Side by Side -->
           <div class="gallery-bottom-row">
             <div class="gallery-strip-thumb">
-              <img id="gallery-img-5" src="assets/vehicles/land-cruiser/thumb-5.jpeg" alt="Vehicle Angle 5">
+              <img id="gallery-img-5" src="assets/vehicles/land-cruiser/thumb-5.webp" alt="Vehicle Angle 5" loading="lazy" decoding="async" width="300" height="200">
             </div>
             <div class="gallery-strip-thumb">
-              <img id="gallery-img-6" src="assets/vehicles/land-cruiser/thumb-6.jpeg" alt="Vehicle Angle 6">
+              <img id="gallery-img-6" src="assets/vehicles/land-cruiser/thumb-6.webp" alt="Vehicle Angle 6" loading="lazy" decoding="async" width="300" height="200">
             </div>
             <div class="gallery-strip-thumb">
-              <img id="gallery-img-7" src="assets/vehicles/land-cruiser/thumb-7.jpeg" alt="Vehicle Angle 7">
+              <img id="gallery-img-7" src="assets/vehicles/land-cruiser/thumb-7.webp" alt="Vehicle Angle 7" loading="lazy" decoding="async" width="300" height="200">
             </div>
             <div class="gallery-strip-thumb">
-              <img id="gallery-img-8" src="assets/vehicles/land-cruiser/thumb-8.jpeg" alt="Vehicle Angle 8">
+              <img id="gallery-img-8" src="assets/vehicles/land-cruiser/thumb-8.webp" alt="Vehicle Angle 8" loading="lazy" decoding="async" width="300" height="200">
             </div>
           </div>
         </div>
@@ -263,7 +264,7 @@
             <!-- Left Column: Background image with dark overlay, copy and WhatsApp button -->
             <div class="vehicle-enquiry-left">
               <div class="vehicle-enquiry-bg-layer">
-                <img src="assets/images/enquiry-vehicle-design.jpeg" alt="Vehicle Enquiry" class="vehicle-enquiry-bg-img" id="enquiryVehicleBg">
+                <img src="assets/images/enquiry-vehicle-design.webp" alt="Vehicle Enquiry" class="vehicle-enquiry-bg-img" id="enquiryVehicleBg" loading="lazy" decoding="async" width="810" height="1080">
                 <div class="vehicle-enquiry-bg-overlay"></div>
               </div>
               <div class="vehicle-enquiry-left-content">
@@ -352,7 +353,7 @@
       <!-- Col 1: Brand -->
       <div class="footer-brand-col">
         <div class="footer-brandmark">
-          <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="footer-brandmark-logo">
+          <img src="assets/images/logo.webp" alt="BLUE_ICONS GLOBAL LIMITED" class="footer-brandmark-logo" loading="lazy" decoding="async" width="140" height="48">
         </div>
         <p class="footer-brand-desc">
           Security guards and escorts, event ushers, executive car hire, chauffeur services and logistics support in Port Harcourt and across Nigeria.
