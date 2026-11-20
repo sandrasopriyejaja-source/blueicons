@@ -2113,11 +2113,31 @@ section {
   background-color: var(--surface-page);
 }
 
+.fleet-showcase-split {
+  margin-bottom: 64px;
+}
+
+.fleet-catalog-header {
+  margin-bottom: 32px;
+}
+
+.fleet-catalog-header .eyebrow {
+  margin-bottom: 8px;
+  display: block;
+}
+
+.fleet-catalog-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  color: var(--text-navy);
+}
+
 .vehicles-catalog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  margin-top: 56px;
+  margin-top: 0;
 }
 
 .vehicle-card {
@@ -2173,6 +2193,9 @@ section {
   font-size: 14px;
   font-weight: 600;
   color: var(--accent-strong);
+  align-self: flex-end;
+  margin-left: auto;
+  text-decoration: none;
 }
 
 .vehicle-card-link img {
@@ -2251,6 +2274,7 @@ section {
   height: 22px;
   flex-shrink: 0;
   margin-top: 3px;
+  border-radius: 6px;
 }
 
 .chauffeur-check-item span {
@@ -3329,6 +3353,43 @@ section {
     min-height: 300px;
     border-radius: 0 0 32px 32px;
     object-fit: cover;
+  }
+
+  /* Fleet Catalog and Chauffeur on Tablet */
+  body[data-page="fleet"] .fleet-showcase-split {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  body[data-page="fleet"] .fleet-catalog-header {
+    margin-bottom: 24px;
+  }
+  body[data-page="fleet"] .fleet-catalog-header h2 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  body[data-page="fleet"] .vehicles-catalog-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+  body[data-page="fleet"] .vehicle-card-media {
+    height: 240px;
+  }
+  body[data-page="fleet"] .chauffeur-gold-banner {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    border-radius: 32px !important;
+  }
+  body[data-page="fleet"] .chauffeur-banner-media {
+    height: 320px !important;
+    min-height: 320px !important;
+  }
+  body[data-page="fleet"] .chauffeur-banner-content {
+    padding: 40px 32px !important;
+  }
+  body[data-page="fleet"] .chauffeur-banner-content h2 {
+    font-size: 32px !important;
+    line-height: 40px !important;
   }
 
   .detail-header-section {
@@ -5093,10 +5154,9 @@ section {
   }
 
   /* ========================================================================
-     4. PAGE HEROES ON OTHER PAGES (About, Services, Fleet, Contact, Vehicle)
+     4. PAGE HEROES ON OTHER PAGES (Contact, Vehicle)
      ======================================================================== */
-  .page-hero-container,
-  .fleet-hero-container {
+  .page-hero-container {
     display: flex !important;
     flex-direction: column !important;
     border-radius: 24px !important;
@@ -5107,19 +5167,16 @@ section {
     box-sizing: border-box !important;
   }
   .page-hero-left,
-  .fleet-hero-left,
   .contact-hero-left {
     padding: 24px 20px !important;
     width: 100% !important;
     min-height: auto !important;
     box-sizing: border-box !important;
   }
-  .page-hero-copy,
-  .fleet-hero-copy {
+  .page-hero-copy {
     margin-top: 18px !important;
   }
   .page-hero-copy .eyebrow,
-  .fleet-hero-copy .eyebrow,
   .contact-hero-left .eyebrow {
     font-size: 12px !important;
     font-weight: 800 !important;
@@ -5130,14 +5187,12 @@ section {
     display: block !important;
   }
   .page-hero-subheading,
-  .fleet-hero-subheading,
   .contact-hero-left p {
     font-size: 14.5px !important;
     line-height: 23px !important;
     color: var(--text-secondary) !important;
   }
   .page-hero-right,
-  .fleet-hero-right,
   .contact-hero-right {
     width: 100% !important;
     height: 240px !important;
@@ -5148,7 +5203,6 @@ section {
   }
   .page-hero-right img,
   .page-hero-right video,
-  .fleet-hero-right img,
   .contact-hero-right img {
     width: 100% !important;
     height: 100% !important;
@@ -5158,85 +5212,270 @@ section {
   }
 
   /* ========================================================================
-     5. VEHICLES CATALOG GRID ON FLEET PAGE
+     5. OUR FLEET PAGE MOBILE LAYOUT (Scoped strictly to body[data-page="fleet"])
+     Matches media_1795162843184_eb00c3a8.png exactly
      ======================================================================== */
-  .vehicles-catalog-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-    margin-top: 32px !important;
+  body[data-page="fleet"] .fleet-hero-section {
+    padding: 16px 0 24px !important;
+    margin-bottom: 0 !important;
   }
-  .vehicle-card {
+  body[data-page="fleet"] .fleet-hero-container {
+    display: flex !important;
+    flex-direction: column !important;
     border-radius: 24px !important;
+    padding: 20px 16px !important;
+    background-color: var(--surface-subtle) !important;
+    overflow: hidden !important;
+    min-height: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  body[data-page="fleet"] .fleet-hero-left {
+    display: contents !important;
+    padding: 0 !important;
+  }
+  body[data-page="fleet"] .home-hero-nav {
+    order: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin-bottom: 24px !important;
+    padding: 0 !important;
+  }
+  body[data-page="fleet"] .fleet-hero-copy {
+    order: 2 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  body[data-page="fleet"] .fleet-hero-copy .eyebrow {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: var(--accent-strong, #b88b45) !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    display: block !important;
+  }
+  body[data-page="fleet"] .fleet-hero-heading {
+    font-size: 28px !important;
+    line-height: 36px !important;
+    letter-spacing: -0.3px !important;
+    margin-bottom: 14px !important;
+  }
+  body[data-page="fleet"] .fleet-hero-subheading {
+    font-size: 15px !important;
+    line-height: 24px !important;
+    color: var(--text-secondary, #647180) !important;
+    margin: 0 !important;
+  }
+  body[data-page="fleet"] .fleet-hero-right {
+    order: 3 !important;
+    width: 100% !important;
+    height: 240px !important;
+    min-height: 240px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+  body[data-page="fleet"] .fleet-hero-right img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    display: block !important;
+  }
+
+  /* Section 2: Vehicle Showcase Split & Catalog Header */
+  body[data-page="fleet"] .fleet-grid-section {
+    padding: 28px 0 !important;
+  }
+  body[data-page="fleet"] .fleet-showcase-split {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin-bottom: 32px !important;
+  }
+  body[data-page="fleet"] .fleet-showcase-split .eyebrow-large {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: var(--accent-strong, #b88b45) !important;
+    text-transform: uppercase !important;
+    display: block !important;
+    margin-bottom: 10px !important;
+  }
+  body[data-page="fleet"] .fleet-showcase-split .heading-h1 {
+    font-size: 26px !important;
+    line-height: 34px !important;
+    letter-spacing: -0.3px !important;
+    margin-bottom: 14px !important;
+  }
+  body[data-page="fleet"] .fleet-showcase-split .body-large {
+    font-size: 15px !important;
+    line-height: 24px !important;
+    color: var(--text-secondary, #647180) !important;
+    margin: 0 !important;
+  }
+  body[data-page="fleet"] .fleet-catalog-header {
+    margin-bottom: 24px !important;
+  }
+  body[data-page="fleet"] .fleet-catalog-header .eyebrow {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: var(--accent-strong, #b88b45) !important;
+    text-transform: uppercase !important;
+    display: block !important;
+    margin-bottom: 8px !important;
+  }
+  body[data-page="fleet"] .fleet-catalog-header h2 {
+    font-size: 22px !important;
+    line-height: 30px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.3px !important;
+    color: var(--text-navy) !important;
+    margin: 0 !important;
+  }
+
+  /* Catalog Grid & Vehicle Cards */
+  body[data-page="fleet"] .vehicles-catalog-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    margin-top: 0 !important;
+  }
+  body[data-page="fleet"] .vehicle-card {
+    border-radius: 20px !important;
     overflow: hidden !important;
     background-color: var(--surface-subtle) !important;
     display: flex !important;
     flex-direction: column !important;
   }
-  .vehicle-card-media {
+  body[data-page="fleet"] .vehicle-card-media {
     width: 100% !important;
-    height: 280px !important;
-    min-height: 280px !important;
+    height: 240px !important;
+    min-height: 240px !important;
     overflow: hidden !important;
   }
-  .vehicle-card-media img {
+  body[data-page="fleet"] .vehicle-card-media img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
     display: block !important;
   }
-  .vehicle-card-body {
+  body[data-page="fleet"] .vehicle-card-body {
     padding: 22px 20px !important;
     display: flex !important;
     flex-direction: column !important;
   }
-  .vehicle-card-body p {
+  body[data-page="fleet"] .vehicle-card-body h3 {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 28px !important;
+    color: var(--text-navy) !important;
+    margin-bottom: 10px !important;
+  }
+  body[data-page="fleet"] .vehicle-card-body p {
     font-size: 14.5px !important;
     line-height: 23px !important;
     color: var(--text-secondary) !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 18px !important;
   }
-  .vehicle-card-link {
+  body[data-page="fleet"] .vehicle-card-link {
     font-size: 14px !important;
     font-weight: 600 !important;
     color: var(--accent-strong) !important;
     display: inline-flex !important;
     align-items: center !important;
-    gap: 6px !important;
+    gap: 8px !important;
+    align-self: flex-end !important;
+    margin-left: auto !important;
+    text-decoration: none !important;
   }
 
-  /* Chauffeur Banner on Fleet Page */
-  .chauffeur-gold-banner {
+  /* Section 3: Chauffeur Services Banner */
+  body[data-page="fleet"] .fleet-chauffeur-section {
+    padding: 28px 0 !important;
+  }
+  body[data-page="fleet"] .chauffeur-gold-banner {
     display: flex !important;
     flex-direction: column !important;
-    border-radius: 28px !important;
+    border-radius: 24px !important;
     overflow: hidden !important;
-    background-color: var(--accent-strong) !important;
+    background-color: var(--accent-strong, #b88b45) !important;
+    min-height: auto !important;
   }
-  .chauffeur-banner-media {
+  body[data-page="fleet"] .chauffeur-banner-media {
+    width: 100% !important;
     height: 240px !important;
     min-height: 240px !important;
-    width: 100% !important;
+    overflow: hidden !important;
   }
-  .chauffeur-banner-media img {
+  body[data-page="fleet"] .chauffeur-banner-media img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    display: block !important;
   }
-  .chauffeur-banner-content {
-    padding: 32px 24px !important;
+  body[data-page="fleet"] .chauffeur-banner-content {
+    padding: 28px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
-  .chauffeur-feature-list {
-    margin: 20px 0 28px !important;
+  body[data-page="fleet"] .chauffeur-banner-content .eyebrow {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: #ffffff !important;
+    margin-bottom: 10px !important;
+    display: block !important;
   }
-  .chauffeur-feature-item {
-    font-size: 14.5px !important;
+  body[data-page="fleet"] .chauffeur-banner-content h2 {
+    font-size: 26px !important;
+    line-height: 34px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.3px !important;
+    color: #ffffff !important;
+    margin-bottom: 14px !important;
+  }
+  body[data-page="fleet"] .chauffeur-banner-content p {
+    font-size: 15px !important;
+    line-height: 24px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin-bottom: 24px !important;
+  }
+  body[data-page="fleet"] .chauffeur-checklist {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    margin-bottom: 28px !important;
+  }
+  body[data-page="fleet"] .chauffeur-check-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  body[data-page="fleet"] .chauffeur-check-item img {
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 6px !important;
+    flex-shrink: 0 !important;
+  }
+  body[data-page="fleet"] .chauffeur-check-item span {
+    font-size: 15px !important;
+    line-height: 22px !important;
+    font-weight: 600 !important;
     color: #ffffff !important;
   }
-  .btn-chauffeur-enquire {
+  body[data-page="fleet"] .btn-chauffeur-request {
     width: 100% !important;
-    height: 50px !important;
+    height: 52px !important;
     justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
     border-radius: 100px !important;
   }
 
@@ -5775,6 +6014,33 @@ section {
   body[data-page="services"] .page-hero-container:hover .page-hero-right img {
     transform: scale(1.02);
   }
+
+  /* 8. Our Fleet Desktop Hover Animations (Scoped strictly to body[data-page="fleet"]) */
+  body[data-page="fleet"] .vehicle-card-link {
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+  body[data-page="fleet"] .vehicle-card-link:hover {
+    transform: translateX(4px);
+  }
+  body[data-page="fleet"] .chauffeur-gold-banner {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  body[data-page="fleet"] .chauffeur-gold-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(184, 139, 69, 0.2);
+  }
+  body[data-page="fleet"] .chauffeur-banner-media img {
+    transition: transform 0.3s ease;
+  }
+  body[data-page="fleet"] .chauffeur-gold-banner:hover .chauffeur-banner-media img {
+    transform: scale(1.02);
+  }
+  body[data-page="fleet"] .fleet-hero-right img {
+    transition: transform 0.3s ease;
+  }
+  body[data-page="fleet"] .fleet-hero-container:hover .fleet-hero-right img {
+    transform: scale(1.02);
+  }
 }
 
 /* ==========================================================================
@@ -5796,7 +6062,12 @@ section {
   body[data-page="about"] .philosophy-step-item:hover,
   body[data-page="about"] .bento-tile img,
   body[data-page="services"] .service-feature-media:hover,
-  body[data-page="services"] .service-feature-media img {
+  body[data-page="services"] .service-feature-media img,
+  body[data-page="fleet"] .vehicle-card:hover,
+  body[data-page="fleet"] .vehicle-card-link:hover,
+  body[data-page="fleet"] .chauffeur-gold-banner:hover,
+  body[data-page="fleet"] .chauffeur-banner-media img,
+  body[data-page="fleet"] .fleet-hero-right img {
     transform: none !important;
   }
 }
