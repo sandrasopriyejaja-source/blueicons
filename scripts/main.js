@@ -184,10 +184,11 @@ function initWhoWeAreCarousel() {
 const VEHICLE_CATALOG = {
   'land-cruiser': {
     name: 'Toyota Land Cruiser',
-    shortName: 'Land Cruiser',
+    heroTitle: 'Land Cruisers',
+    breadcrumbVehicle: 'LAND CRUISERS',
+    heroSubheading: 'Explore the vehicle, view its interior and share your travel requirements with our team.',
+    gallerySubheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     category: 'Full-Size Luxury SUV',
-    eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
-    subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '7 Passengers',
     transmission: 'Automatic 4x4',
     specs: '4x4 Automatic · 7 Seats',
@@ -205,10 +206,11 @@ const VEHICLE_CATALOG = {
   },
   'prado': {
     name: 'Toyota Prado SUVs',
-    shortName: 'Toyota Prado',
+    heroTitle: 'Toyota Prado SUVs',
+    breadcrumbVehicle: 'TOYOTA PRADO SUVS',
+    heroSubheading: 'Explore the vehicle, view its interior and share your travel requirements with our team.',
+    gallerySubheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     category: 'Executive SUV',
-    eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
-    subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '7 Passengers',
     transmission: 'Automatic 4x4',
     specs: '4x4 Automatic · 7 Seats',
@@ -226,10 +228,11 @@ const VEHICLE_CATALOG = {
   },
   'hilux': {
     name: 'Toyota Hilux',
-    shortName: 'Toyota Hilux',
+    heroTitle: 'Toyota Hilux',
+    breadcrumbVehicle: 'TOYOTA HILUX',
+    heroSubheading: 'Explore the vehicle, view its interior and share your travel requirements with our team.',
+    gallerySubheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     category: 'Security & Utility Truck',
-    eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
-    subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '5 Passengers',
     transmission: 'Automatic / Manual 4x4',
     specs: '4x4 Manual / Auto · 5 Seats',
@@ -247,10 +250,11 @@ const VEHICLE_CATALOG = {
   },
   'hiace': {
     name: 'Toyota Hiace Buses',
-    shortName: 'Toyota Hiace',
+    heroTitle: 'Toyota Hiace Buses',
+    breadcrumbVehicle: 'TOYOTA HIACE BUSES',
+    heroSubheading: 'Explore the vehicle, view its interior and share your travel requirements with our team.',
+    gallerySubheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     category: 'Passenger Van',
-    eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
-    subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '14 - 16 Passengers',
     transmission: 'Manual / Automatic',
     specs: 'Automatic · 14-16 Seats',
@@ -268,10 +272,11 @@ const VEHICLE_CATALOG = {
   },
   'coaster': {
     name: 'Coaster Buses',
-    shortName: 'Coaster Bus',
+    heroTitle: 'Coaster Buses',
+    breadcrumbVehicle: 'COASTER BUSES',
+    heroSubheading: 'Explore the vehicle, view its interior and share your travel requirements with our team.',
+    gallerySubheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     category: 'Executive Bus',
-    eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
-    subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '30 Passengers',
     transmission: 'Manual Diesel',
     specs: 'Manual Diesel · 30 Seats',
@@ -289,10 +294,11 @@ const VEHICLE_CATALOG = {
   },
   'escalade': {
     name: 'Cadillac Escalades',
-    shortName: 'Cadillac Escalade',
+    heroTitle: 'Cadillac Escalades',
+    breadcrumbVehicle: 'CADILLAC ESCALADES',
+    heroSubheading: 'Explore the vehicle, view its interior and share your travel requirements with our team.',
+    gallerySubheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     category: 'Ultra-Luxury VIP SUV',
-    eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
-    subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '7 Passengers',
     transmission: 'Automatic',
     specs: 'Automatic · 7 Seats',
@@ -319,34 +325,26 @@ function initVehicleDetail() {
   const vehicleKey = urlParams.get('vehicle') || 'land-cruiser';
   const data = VEHICLE_CATALOG[vehicleKey] || VEHICLE_CATALOG['land-cruiser'];
 
+  const vehicleDisplayName = data.heroTitle || data.name;
+
   // Update document title
-  document.title = `${data.shortName || data.name} — BLUE_ICONS GLOBAL LIMITED`;
+  document.title = `${vehicleDisplayName} — BLUE_ICONS GLOBAL LIMITED`;
 
-  // Update text
-  const titleEl = document.getElementById('vehicle-title');
-  const catEl = document.getElementById('vehicle-category');
-  const subEl = document.getElementById('vehicle-subheading');
-  const crumbEl = document.getElementById('breadcrumb-vehicle-name');
-  const capEl = document.getElementById('spec-capacity');
-  const transEl = document.getElementById('spec-transmission');
-
-  if (titleEl) titleEl.textContent = data.name;
-  if (catEl) catEl.textContent = data.eyebrow;
-  if (subEl) subEl.textContent = data.subheading;
-  if (crumbEl) crumbEl.textContent = data.name;
-  if (capEl) capEl.textContent = data.capacity;
-  if (transEl) transEl.textContent = data.transmission;
-
-  // Mobile hero elements
-  const mobCat = document.getElementById('mobile-vehicle-category');
-  const mobTitle = document.getElementById('mobile-vehicle-title');
-  const mobSub = document.getElementById('mobile-vehicle-subheading');
+  // Hero Section Dynamic Binding (Desktop & Mobile)
+  const heroCrumbEl = document.getElementById('hero-breadcrumb-vehicle');
+  const heroTitleEl = document.getElementById('hero-vehicle-title');
+  const heroSubEl = document.getElementById('hero-vehicle-subheading');
   const mobSpecs = document.getElementById('mobile-vehicle-specs');
-  const photoCountEl = document.getElementById('gallery-photos-count');
 
-  if (mobCat) mobCat.textContent = data.eyebrow;
-  if (mobTitle) mobTitle.textContent = data.shortName || data.name;
-  if (mobSub) mobSub.textContent = data.subheading;
+  if (heroCrumbEl) {
+    heroCrumbEl.textContent = data.breadcrumbVehicle || vehicleDisplayName.toUpperCase();
+  }
+  if (heroTitleEl) {
+    heroTitleEl.textContent = vehicleDisplayName;
+  }
+  if (heroSubEl) {
+    heroSubEl.textContent = data.heroSubheading;
+  }
   if (mobSpecs && data.specs) {
     const parts = data.specs.split('·').map(s => s.trim());
     if (parts.length >= 2) {
@@ -354,6 +352,14 @@ function initVehicleDetail() {
     } else {
       mobSpecs.textContent = data.specs;
     }
+  }
+
+  // Gallery Caption Section Dynamic Binding
+  const gallerySubEl = document.getElementById('vehicle-subheading');
+  const photoCountEl = document.getElementById('gallery-photos-count');
+
+  if (gallerySubEl) {
+    gallerySubEl.textContent = data.gallerySubheading || data.subheading;
   }
   if (photoCountEl) {
     photoCountEl.textContent = data.photoCountText || `${data.images.length} supplied photographs`;
@@ -366,7 +372,7 @@ function initVehicleDetail() {
   }
   const waLink = document.getElementById('whatsappVehicleLink');
   if (waLink) {
-    waLink.href = `https://wa.me/2349123127277?text=${encodeURIComponent(`Hello BLUE_ICONS, I would like to enquire about renting the ${data.name}.`)}`;
+    waLink.href = `https://wa.me/2349123127277?text=${encodeURIComponent(`Hello BLUE_ICONS, I would like to enquire about renting the ${vehicleDisplayName}.`)}`;
   }
 
   // Populate gallery images
@@ -374,7 +380,7 @@ function initVehicleDetail() {
     const imgEl = document.getElementById(`gallery-img-${i}`);
     if (imgEl && data.images[i - 1]) {
       imgEl.src = data.images[i - 1];
-      imgEl.alt = `${data.name} Angle ${i}`;
+      imgEl.alt = `${vehicleDisplayName} Angle ${i}`;
       
       // Interactive swap: clicking any thumbnail promotes it to main frame
       if (i > 1) {
@@ -434,7 +440,7 @@ function initVehicleEnquiryForm() {
     const urlParams = new URLSearchParams(window.location.search);
     const vehicleKey = urlParams.get('vehicle') || 'land-cruiser';
     const vehicleData = VEHICLE_CATALOG[vehicleKey] || VEHICLE_CATALOG['land-cruiser'];
-    const vehicleName = vehicleData.name;
+    const vehicleName = vehicleData.heroTitle || vehicleData.name;
 
     const fullName = cleanStr(form.querySelector('#vFullName')?.value, 100) || 'Client';
     const phone = cleanStr(form.querySelector('#vPhone')?.value, 30);
