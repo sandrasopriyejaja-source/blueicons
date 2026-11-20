@@ -328,7 +328,7 @@ function initVehicleDetail() {
   const vehicleDisplayName = data.heroTitle || data.name;
 
   // Update document title
-  document.title = `${vehicleDisplayName} — BLUE_ICONS GLOBAL LIMITED`;
+  document.title = `${vehicleDisplayName} | BLUE_ICONS GLOBAL LIMITED`;
 
   // Hero Section Dynamic Binding (Desktop & Mobile)
   const heroCrumbEl = document.getElementById('hero-breadcrumb-vehicle');
