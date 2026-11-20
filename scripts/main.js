@@ -184,11 +184,14 @@ function initWhoWeAreCarousel() {
 const VEHICLE_CATALOG = {
   'land-cruiser': {
     name: 'Toyota Land Cruiser',
+    shortName: 'Land Cruiser',
     category: 'Full-Size Luxury SUV',
     eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
     subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '7 Passengers',
     transmission: 'Automatic 4x4',
+    specs: '4x4 Automatic · 7 Seats',
+    photoCountText: '8 supplied photographs',
     images: [
       'assets/vehicles/land-cruiser/thumb-1.jpeg',
       'assets/vehicles/land-cruiser/thumb-2.jpeg',
@@ -202,11 +205,14 @@ const VEHICLE_CATALOG = {
   },
   'prado': {
     name: 'Toyota Prado SUVs',
+    shortName: 'Toyota Prado',
     category: 'Executive SUV',
     eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
     subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '7 Passengers',
     transmission: 'Automatic 4x4',
+    specs: '4x4 Automatic · 7 Seats',
+    photoCountText: '8 supplied photographs',
     images: [
       'assets/vehicles/prado/thumb-1.jpeg',
       'assets/vehicles/prado/thumb-2.jpeg',
@@ -220,11 +226,14 @@ const VEHICLE_CATALOG = {
   },
   'hilux': {
     name: 'Toyota Hilux',
+    shortName: 'Toyota Hilux',
     category: 'Security & Utility Truck',
     eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
     subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '5 Passengers',
     transmission: 'Automatic / Manual 4x4',
+    specs: '4x4 Manual / Auto · 5 Seats',
+    photoCountText: '8 supplied photographs',
     images: [
       'assets/vehicles/hilux/thumb-1.jpeg',
       'assets/vehicles/hilux/thumb-2.jpeg',
@@ -238,11 +247,14 @@ const VEHICLE_CATALOG = {
   },
   'hiace': {
     name: 'Toyota Hiace Buses',
+    shortName: 'Toyota Hiace',
     category: 'Passenger Van',
     eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
     subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '14 - 16 Passengers',
     transmission: 'Manual / Automatic',
+    specs: 'Automatic · 14-16 Seats',
+    photoCountText: '8 supplied photographs',
     images: [
       'assets/vehicles/hiace/thumb-1.jpeg',
       'assets/vehicles/hiace/thumb-2.jpeg',
@@ -256,11 +268,14 @@ const VEHICLE_CATALOG = {
   },
   'coaster': {
     name: 'Coaster Buses',
+    shortName: 'Coaster Bus',
     category: 'Executive Bus',
     eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
     subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '30 Passengers',
     transmission: 'Manual Diesel',
+    specs: 'Manual Diesel · 30 Seats',
+    photoCountText: '8 supplied photographs',
     images: [
       'assets/vehicles/coaster/thumb-1.jpeg',
       'assets/vehicles/coaster/thumb-2.jpeg',
@@ -274,11 +289,14 @@ const VEHICLE_CATALOG = {
   },
   'escalade': {
     name: 'Cadillac Escalades',
+    shortName: 'Cadillac Escalade',
     category: 'Ultra-Luxury VIP SUV',
     eyebrow: 'A CLOSER LOOK AT THE VEHICLE',
     subheading: 'Explore the different angles of the vehicle to get a better feel for the vehicle.',
     capacity: '7 Passengers',
     transmission: 'Automatic',
+    specs: 'Automatic · 7 Seats',
+    photoCountText: '8 supplied photographs',
     images: [
       'assets/vehicles/escalade/thumb-1.jpeg',
       'assets/vehicles/escalade/thumb-2.jpeg',
@@ -301,6 +319,9 @@ function initVehicleDetail() {
   const vehicleKey = urlParams.get('vehicle') || 'land-cruiser';
   const data = VEHICLE_CATALOG[vehicleKey] || VEHICLE_CATALOG['land-cruiser'];
 
+  // Update document title
+  document.title = `${data.shortName || data.name} — BLUE_ICONS GLOBAL LIMITED`;
+
   // Update text
   const titleEl = document.getElementById('vehicle-title');
   const catEl = document.getElementById('vehicle-category');
@@ -315,6 +336,28 @@ function initVehicleDetail() {
   if (crumbEl) crumbEl.textContent = data.name;
   if (capEl) capEl.textContent = data.capacity;
   if (transEl) transEl.textContent = data.transmission;
+
+  // Mobile hero elements
+  const mobCat = document.getElementById('mobile-vehicle-category');
+  const mobTitle = document.getElementById('mobile-vehicle-title');
+  const mobSub = document.getElementById('mobile-vehicle-subheading');
+  const mobSpecs = document.getElementById('mobile-vehicle-specs');
+  const photoCountEl = document.getElementById('gallery-photos-count');
+
+  if (mobCat) mobCat.textContent = data.eyebrow;
+  if (mobTitle) mobTitle.textContent = data.shortName || data.name;
+  if (mobSub) mobSub.textContent = data.subheading;
+  if (mobSpecs && data.specs) {
+    const parts = data.specs.split('·').map(s => s.trim());
+    if (parts.length >= 2) {
+      mobSpecs.innerHTML = `<span>${parts[0]}</span><span class="bullet">&bull;</span><span>${parts[1]}</span>`;
+    } else {
+      mobSpecs.textContent = data.specs;
+    }
+  }
+  if (photoCountEl) {
+    photoCountEl.textContent = data.photoCountText || `${data.images.length} supplied photographs`;
+  }
 
   // Keep the exact design background vehicle image specified in Figma Node 104:32
   const enquiryBg = document.getElementById('enquiryVehicleBg');

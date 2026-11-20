@@ -30,10 +30,10 @@
 <body data-page="vehicle-detail">
 
   <main>
-    <!-- Section 1: Vehicle Detail Hero & Header (Exact Figma Frame 95:32 / Node 95:33) -->
-    <section class="detail-hero-section">
+    <!-- Section 1: Vehicle Detail Hero & Header (Matches Desktop & Mobile Screenshots) -->
+    <section class="detail-hero-section anim-hero-stagger">
       <div class="detail-hero-card">
-        <!-- Integrated Header Navigation (Figma Node 95:43) -->
+        <!-- Integrated Header Navigation -->
         <header class="home-hero-nav">
           <a href="index.html" class="brand-logo-wrap" aria-label="BLUE_ICONS Home">
             <img src="assets/images/logo.png" alt="BLUE_ICONS GLOBAL LIMITED" class="brand-logo">
@@ -48,39 +48,41 @@
             </ul>
           </nav>
           <button class="mobile-menu-btn" aria-label="Toggle navigation menu" id="mobileMenuBtn">
-            <img src="assets/icons/chevron-down.svg" alt="" width="24" height="24">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="6" x2="20" y2="6"></line>
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
           </button>
         </header>
 
-        <!-- Quote notice inside Frame 95:33 on right -->
+        <!-- Mobile-Only Hero Vehicle Info (Matches Mobile Screenshot) -->
+        <div class="mobile-hero-vehicle-info">
+          <span class="eyebrow" id="mobile-vehicle-category">A CLOSER LOOK AT THE VEHICLE</span>
+          <h1 class="display-hero" id="mobile-vehicle-title">Land Cruiser</h1>
+          <p class="body-default" id="mobile-vehicle-subheading">
+            Explore the different angles of the vehicle to get a better feel for the vehicle.
+          </p>
+          <div class="mobile-vehicle-specs-badge" id="mobile-vehicle-specs">
+            <span>4x4 Automatic</span>
+            <span class="bullet">&bull;</span>
+            <span>7 Seats</span>
+          </div>
+        </div>
+
+        <!-- Rental Quote Box (Top Right on Desktop, Bottom of Card on Mobile) -->
         <div class="detail-hero-quote-box">
           <span class="eyebrow">RENTAL QUOTE</span>
           <p class="quote-text">Pricing is based on your requirements</p>
         </div>
       </div>
+    </section>
 
-      <div class="container" style="padding-top: 48px; padding-bottom: 40px;">
-        <!-- Header Info -->
-        <div style="margin-bottom: 32px;">
-          <!-- Breadcrumbs -->
-          <div style="display: flex; gap: 8px; font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; font-family: var(--font-secondary);">
-            <a href="index.html">Home</a>
-            <span>/</span>
-            <a href="fleet.html">Our Fleet</a>
-            <span>/</span>
-            <span id="breadcrumb-vehicle-name" style="color: var(--text-primary); font-weight: 600;">Toyota Land Cruiser</span>
-          </div>
-          <span class="eyebrow" id="vehicle-category">A CLOSER LOOK AT THE VEHICLE</span>
-          <h1 class="display-hero" id="vehicle-title" style="margin-bottom: 8px;">
-            Toyota Land Cruiser
-          </h1>
-          <p class="body-default" id="vehicle-subheading" style="color: var(--text-secondary); max-width: 600px;">
-            Explore the different angles of the vehicle to get a better feel for the vehicle.
-          </p>
-        </div>
-
-        <!-- Multi-Angle Image Gallery (Exact Figma Composition: Nodes 93:75, 93:76, 93:77, 93:78, 103:315, 103:316, 103:319, 103:320) -->
-        <div class="gallery-grid-composition">
+    <!-- Section 2: Multi-Angle Image Gallery (Matches Desktop & Mobile Screenshots) -->
+    <section class="vehicle-gallery-section">
+      <div class="container">
+        <!-- Gallery Grid Composition (8 Photos Matching Desktop & Mobile Screenshots) -->
+        <div class="gallery-grid-composition anim-appear">
           <!-- Top Row: Big Exterior on Left (w ~885px, h ~529px) + 3 Interior on Right (1 top, 2 split bottom) -->
           <div class="gallery-top-row">
             <div class="gallery-main-frame">
@@ -89,14 +91,14 @@
 
             <div class="gallery-right-stack">
               <div class="gallery-stack-top">
-                <img id="gallery-img-2" src="assets/vehicles/land-cruiser/thumb-2.jpeg" alt="Interior Angle 1">
+                <img id="gallery-img-2" src="assets/vehicles/land-cruiser/thumb-2.jpeg" alt="Vehicle Angle 2">
               </div>
               <div class="gallery-stack-bottom-split">
                 <div class="gallery-stack-sub">
-                  <img id="gallery-img-3" src="assets/vehicles/land-cruiser/thumb-3.jpeg" alt="Interior Angle 2">
+                  <img id="gallery-img-3" src="assets/vehicles/land-cruiser/thumb-3.jpeg" alt="Vehicle Angle 3">
                 </div>
                 <div class="gallery-stack-sub">
-                  <img id="gallery-img-4" src="assets/vehicles/land-cruiser/thumb-4.jpeg" alt="Interior Angle 3">
+                  <img id="gallery-img-4" src="assets/vehicles/land-cruiser/thumb-4.jpeg" alt="Vehicle Angle 4">
                 </div>
               </div>
             </div>
@@ -105,275 +107,209 @@
           <!-- Bottom Row: 4 Additional Angles Side by Side -->
           <div class="gallery-bottom-row">
             <div class="gallery-strip-thumb">
-              <img id="gallery-img-5" src="assets/vehicles/land-cruiser/thumb-5.jpeg" alt="Exterior Profile Angle">
+              <img id="gallery-img-5" src="assets/vehicles/land-cruiser/thumb-5.jpeg" alt="Vehicle Angle 5">
             </div>
             <div class="gallery-strip-thumb">
-              <img id="gallery-img-6" src="assets/vehicles/land-cruiser/thumb-6.jpeg" alt="Interior Cabin Angle">
+              <img id="gallery-img-6" src="assets/vehicles/land-cruiser/thumb-6.jpeg" alt="Vehicle Angle 6">
             </div>
             <div class="gallery-strip-thumb">
-              <img id="gallery-img-7" src="assets/vehicles/land-cruiser/thumb-7.jpeg" alt="Rear Seating Angle">
+              <img id="gallery-img-7" src="assets/vehicles/land-cruiser/thumb-7.jpeg" alt="Vehicle Angle 7">
             </div>
             <div class="gallery-strip-thumb">
-              <img id="gallery-img-8" src="assets/vehicles/land-cruiser/thumb-8.jpeg" alt="Dashboard &amp; Controls Angle">
+              <img id="gallery-img-8" src="assets/vehicles/land-cruiser/thumb-8.jpeg" alt="Vehicle Angle 8">
             </div>
+          </div>
+        </div>
+
+        <!-- Gallery Caption Row (Directly Below Gallery in Desktop & Mobile Screenshots) -->
+        <div class="gallery-caption-row">
+          <div class="gallery-caption-left">
+            <h2 class="gallery-caption-title">A closer look at the vehicle</h2>
+            <p class="gallery-caption-desc" id="vehicle-subheading">
+              Explore the different angles of the vehicle to get a better feel for the vehicle.
+            </p>
+          </div>
+          <div class="gallery-caption-right">
+            <span class="gallery-photos-count" id="gallery-photos-count">8 supplied photographs</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Vehicle Information & Rental Details (Figma Node 105:456) — Plain White Background -->
+    <!-- Section 3: Vehicle Overview & Rental Planning -->
     <section class="vehicle-info-section">
       <div class="container">
         <!-- Overview & Rental Planning Row -->
-        <div class="vehicle-overview-row">
-          <div>
+        <div class="vehicle-overview-row anim-appear">
+          <div class="overview-left-col">
             <span class="eyebrow">VEHICLE OVERVIEW</span>
-            <h2 class="heading-h1" style="font-size: 42px; line-height: 50px; margin-top: 10px; margin-bottom: 18px;">
+            <h2 class="heading-h1">
               A vehicle for your journey
             </h2>
-            <p class="body-default" style="font-size: 16px; line-height: 26px; color: var(--text-secondary); max-width: 540px;">
+            <p class="body-default">
               Whether you are planning a business trip, a group transfer or a journey that requires a little more coordination, tell us what you have in mind. Our team will help you confirm whether this vehicle is suitable for your plans.
             </p>
           </div>
 
-          <div>
-            <h3 class="heading-h3" style="font-size: 28px; line-height: 36px; margin-bottom: 24px;">
+          <div class="overview-right-col">
+            <h3 class="heading-h3">
               Plan your rental around what matters
             </h3>
             
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-              <div style="display: flex; gap: 16px; align-items: flex-start;">
-                <span style="font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: var(--accent-strong); width: 36px; flex-shrink: 0;">01</span>
-                <div>
-                  <h4 style="font-size: 18px; font-weight: 600; color: var(--text-navy); margin-bottom: 4px;">Your destination</h4>
-                  <p class="body-default" style="font-size: 14px; line-height: 22px; color: var(--text-secondary);">Where the journey begins and where you need to go.</p>
+            <div class="planning-steps-list">
+              <div class="planning-step-item">
+                <span class="planning-step-num">01</span>
+                <div class="planning-step-content">
+                  <h4>Your destination</h4>
+                  <p class="body-default">Where the journey begins and where you need to go.</p>
                 </div>
               </div>
 
-              <div style="display: flex; gap: 16px; align-items: flex-start;">
-                <span style="font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: var(--accent-strong); width: 36px; flex-shrink: 0;">02</span>
-                <div>
-                  <h4 style="font-size: 18px; font-weight: 600; color: var(--text-navy); margin-bottom: 4px;">Your schedule</h4>
-                  <p class="body-default" style="font-size: 14px; line-height: 22px; color: var(--text-secondary);">Your preferred dates, duration and travel times.</p>
+              <div class="planning-step-item">
+                <span class="planning-step-num">02</span>
+                <div class="planning-step-content">
+                  <h4>Your schedule</h4>
+                  <p class="body-default">Your preferred dates, duration and travel times.</p>
                 </div>
               </div>
 
-              <div style="display: flex; gap: 16px; align-items: flex-start;">
-                <span style="font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: var(--accent-strong); width: 36px; flex-shrink: 0;">03</span>
-                <div>
-                  <h4 style="font-size: 18px; font-weight: 600; color: var(--text-navy); margin-bottom: 4px;">Your arrangement</h4>
-                  <p class="body-default" style="font-size: 14px; line-height: 22px; color: var(--text-secondary);">Share whether you need a chauffeur or have other requirements.</p>
+              <div class="planning-step-item">
+                <span class="planning-step-num">03</span>
+                <div class="planning-step-content">
+                  <h4>Your arrangement</h4>
+                  <p class="body-default">Share whether you need a chauffeur or have other requirements.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Rental Arrangements: 4 Cards (Figma Node 105:145) -->
-        <div style="margin-top: 60px;">
-          <div style="max-width: 780px;">
+        <!-- Section 4: Rental Arrangements (4 Cards Matching Screenshot) -->
+        <div class="rental-arrangements-block anim-appear">
+          <div class="rental-arrangements-header">
             <span class="eyebrow">RENTAL ARRANGEMENTS</span>
-            <h2 class="heading-h1" style="font-size: 38px; line-height: 46px; margin-top: 10px; margin-bottom: 14px;">
+            <h2 class="heading-h1">
               Your rental quote is shaped around your needs.
             </h2>
-            <p class="body-default" style="margin-bottom: 32px;">
+            <p class="body-default">
               We do not display a one-size-fits-all rate. The final quotation is prepared around the details of your trip, so our team can understand the service you require before confirming the cost.
             </p>
           </div>
 
-          <div class="rental-factors-grid">
+          <div class="rental-factors-grid anim-stagger-group">
             <div class="rental-factor-card">
               <h4>Location</h4>
-              <p>Within Port Harcourt, intercity journeys or interstate movement.</p>
+              <p>Pick-up point, destination and travel area.</p>
             </div>
             <div class="rental-factor-card">
               <h4>Duration</h4>
-              <p>Single day hire, multiple days or extended corporate rental.</p>
+              <p>How long you need the vehicle for.</p>
             </div>
             <div class="rental-factor-card">
-              <h4>Chauffeur</h4>
-              <p>Self-drive or experienced driver supplied by BLUE_ICONS.</p>
+              <h4>Journey</h4>
+              <p>The purpose and nature of your trip.</p>
             </div>
             <div class="rental-factor-card">
-              <h4>Security</h4>
-              <p>Escort vehicles and personnel available upon request.</p>
+              <h4>Additional needs</h4>
+              <p>Chauffeur requests and other arrangements.</p>
             </div>
           </div>
         </div>
 
-        <!-- Specifications & Highlights Table Wrap -->
-        <div class="vehicle-specs-table-wrap">
-          <span class="eyebrow" style="margin-bottom: 20px;">TECHNICAL SPECIFICATIONS</span>
-          <div class="specs-grid">
-            <div class="spec-item">
-              <span class="spec-label">Seating Capacity</span>
-              <span class="spec-val" id="spec-capacity">7 Passengers</span>
+        <!-- Section 5: Rental Terms & Confirmation (Figma Node 105:454 — Matches Desktop & Mobile Screenshots) -->
+        <div class="rental-terms-section anim-appear">
+          <div class="rental-terms-split">
+            <div class="rental-terms-left">
+              <span class="eyebrow">BEFORE YOU BOOK</span>
+              <h2 class="heading-h1">Rental terms &amp; confirmation</h2>
             </div>
-            <div class="spec-item">
-              <span class="spec-label">Transmission</span>
-              <span class="spec-val" id="spec-transmission">Automatic 4x4</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Air Conditioning</span>
-              <span class="spec-val">Dual Climate Front &amp; Rear</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Security Escort Pairing</span>
-              <span class="spec-val">Compatible</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Chauffeur Service</span>
-              <span class="spec-val">Available upon request</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Booking Terms</span>
-              <span class="spec-val">Daily / Weekly / Monthly</span>
+            <div class="rental-terms-right">
+              <div class="terms-item">
+                <h4>Every booking is subject to confirmation by BLUE_ICONS.</h4>
+                <p>Before you proceed, our team will explain the applicable rental conditions, payment arrangements, any required documentation and cancellation terms for your specific booking. No rental is confirmed until the details have been agreed.</p>
+              </div>
+              <div class="terms-item">
+                <h4>Booking details and payment</h4>
+                <p>Please check the rental dates, equipment, delivery or collection arrangements and quoted charges before confirming. Any applicable deposit, payment schedule or additional charges will be explained for your booking. Let our team know promptly if any information is incorrect or your requirements change.</p>
+              </div>
+              <div class="terms-item">
+                <h4>Equipment use and return</h4>
+                <p>Use the rented equipment only for its agreed purpose and follow the operating and safety instructions provided. Report any faults, loss or damage as soon as possible. The agreed rental conditions will set out collection and return requirements, including timing, equipment condition and any applicable charges.</p>
+              </div>
+              <div class="terms-item">
+                <h4>Changes and cancellations</h4>
+                <p>Contact BLUE_ICONS to request a change, extension or cancellation. Availability, revised pricing and any cancellation charges or refund arrangements will depend on the terms agreed for your booking. Please review these details and ask our team about anything that is unclear before proceeding.</p>
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- Vehicle Enquiry Form Section (Exact Figma Node 104:32) -->
-          <div class="vehicle-enquiry-card-wrapper" id="enquiry" style="margin-top: 64px;">
-            <div class="vehicle-enquiry-pill-card">
-              <!-- Left Column: Background image with dark overlay, copy and WhatsApp button -->
-              <div class="vehicle-enquiry-left">
-                <div class="vehicle-enquiry-bg-layer">
-                  <img src="assets/images/enquiry-vehicle-design.jpeg" alt="Vehicle Enquiry" class="vehicle-enquiry-bg-img" id="enquiryVehicleBg">
-                  <div class="vehicle-enquiry-bg-overlay"></div>
-                </div>
-                <div class="vehicle-enquiry-left-content">
+        <!-- Section 6: Vehicle Enquiry Form Card (Figma Node 104:32 — Matches Desktop & Mobile Screenshots) -->
+        <div class="vehicle-enquiry-card-wrapper anim-appear" id="enquiry">
+          <div class="vehicle-enquiry-pill-card">
+            <!-- Left Column: Background image with dark overlay, copy and WhatsApp button -->
+            <div class="vehicle-enquiry-left">
+              <div class="vehicle-enquiry-bg-layer">
+                <img src="assets/images/enquiry-vehicle-design.jpeg" alt="Vehicle Enquiry" class="vehicle-enquiry-bg-img" id="enquiryVehicleBg">
+                <div class="vehicle-enquiry-bg-overlay"></div>
+              </div>
+              <div class="vehicle-enquiry-left-content">
+                <div>
                   <span class="eyebrow-enquiry">MAKE AN ENQUIRY</span>
                   <h3 class="enquiry-heading">Tell us about your journey</h3>
                   <p class="enquiry-desc">Share a few details and our team will get back to you about availability and a tailored quotation.</p>
-                  <a href="https://wa.me/2349123127277?text=Hello%20BLUE_ICONS,%20I%20would%20like%20to%20enquire%20about%20vehicle%20hire." 
-                     target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-enquiry" id="whatsappVehicleLink">
-                    <img src="assets/icons/whatsapp.svg" alt="" aria-hidden="true">
-                    <span>Chat with us on WhatsApp</span>
-                  </a>
                 </div>
+                <a href="https://wa.me/2349123127277?text=Hello%20BLUE_ICONS,%20I%20would%20like%20to%20enquire%20about%20vehicle%20hire." 
+                   target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-enquiry" id="whatsappVehicleLink">
+                  <img src="assets/icons/whatsapp.svg" alt="" aria-hidden="true">
+                  <span>Chat with us on WhatsApp</span>
+                </a>
               </div>
+            </div>
 
-              <!-- Right Column: Gold card with vehicle-specific enquiry form -->
-              <div class="vehicle-enquiry-right">
-                <form class="vehicle-enquiry-form" id="vehicleEnquiryForm">
-                  <div class="vehicle-form-grid">
-                    <div class="vehicle-form-group">
-                      <label for="vFullName">Full name</label>
-                      <input type="text" id="vFullName" name="fullName" placeholder="Your full name" maxlength="100" required>
-                    </div>
-                    <div class="vehicle-form-group">
-                      <label for="vPhone">Phone number</label>
-                      <input type="tel" id="vPhone" name="phone" placeholder="+234" maxlength="25" required>
-                    </div>
-                    <div class="vehicle-form-group">
-                      <label for="vPickup">Pickup location (State)</label>
-                      <select id="vPickup" name="pickupLocation" required>
-                        <option value="" disabled selected>Select pickup state</option>
-                        <option value="Abia">Abia</option>
-                        <option value="Adamawa">Adamawa</option>
-                        <option value="Akwa Ibom">Akwa Ibom</option>
-                        <option value="Anambra">Anambra</option>
-                        <option value="Bauchi">Bauchi</option>
-                        <option value="Bayelsa">Bayelsa</option>
-                        <option value="Benue">Benue</option>
-                        <option value="Borno">Borno</option>
-                        <option value="Cross River">Cross River</option>
-                        <option value="Delta">Delta</option>
-                        <option value="Ebonyi">Ebonyi</option>
-                        <option value="Edo">Edo</option>
-                        <option value="Ekiti">Ekiti</option>
-                        <option value="Enugu">Enugu</option>
-                        <option value="Federal Capital Territory (Abuja)">Federal Capital Territory (Abuja)</option>
-                        <option value="Gombe">Gombe</option>
-                        <option value="Imo">Imo</option>
-                        <option value="Jigawa">Jigawa</option>
-                        <option value="Kaduna">Kaduna</option>
-                        <option value="Kano">Kano</option>
-                        <option value="Katsina">Katsina</option>
-                        <option value="Kebbi">Kebbi</option>
-                        <option value="Kogi">Kogi</option>
-                        <option value="Kwara">Kwara</option>
-                        <option value="Lagos">Lagos</option>
-                        <option value="Nasarawa">Nasarawa</option>
-                        <option value="Niger">Niger</option>
-                        <option value="Ogun">Ogun</option>
-                        <option value="Ondo">Ondo</option>
-                        <option value="Osun">Osun</option>
-                        <option value="Oyo">Oyo</option>
-                        <option value="Plateau">Plateau</option>
-                        <option value="Rivers">Rivers</option>
-                        <option value="Sokoto">Sokoto</option>
-                        <option value="Taraba">Taraba</option>
-                        <option value="Yobe">Yobe</option>
-                        <option value="Zamfara">Zamfara</option>
-                      </select>
-                    </div>
-                    <div class="vehicle-form-group">
-                      <label for="vDestination">Destination (State)</label>
-                      <select id="vDestination" name="destination" required>
-                        <option value="" disabled selected>Select destination state</option>
-                        <option value="Abia">Abia</option>
-                        <option value="Adamawa">Adamawa</option>
-                        <option value="Akwa Ibom">Akwa Ibom</option>
-                        <option value="Anambra">Anambra</option>
-                        <option value="Bauchi">Bauchi</option>
-                        <option value="Bayelsa">Bayelsa</option>
-                        <option value="Benue">Benue</option>
-                        <option value="Borno">Borno</option>
-                        <option value="Cross River">Cross River</option>
-                        <option value="Delta">Delta</option>
-                        <option value="Ebonyi">Ebonyi</option>
-                        <option value="Edo">Edo</option>
-                        <option value="Ekiti">Ekiti</option>
-                        <option value="Enugu">Enugu</option>
-                        <option value="Federal Capital Territory (Abuja)">Federal Capital Territory (Abuja)</option>
-                        <option value="Gombe">Gombe</option>
-                        <option value="Imo">Imo</option>
-                        <option value="Jigawa">Jigawa</option>
-                        <option value="Kaduna">Kaduna</option>
-                        <option value="Kano">Kano</option>
-                        <option value="Katsina">Katsina</option>
-                        <option value="Kebbi">Kebbi</option>
-                        <option value="Kogi">Kogi</option>
-                        <option value="Kwara">Kwara</option>
-                        <option value="Lagos">Lagos</option>
-                        <option value="Nasarawa">Nasarawa</option>
-                        <option value="Niger">Niger</option>
-                        <option value="Ogun">Ogun</option>
-                        <option value="Ondo">Ondo</option>
-                        <option value="Osun">Osun</option>
-                        <option value="Oyo">Oyo</option>
-                        <option value="Plateau">Plateau</option>
-                        <option value="Rivers">Rivers</option>
-                        <option value="Sokoto">Sokoto</option>
-                        <option value="Taraba">Taraba</option>
-                        <option value="Yobe">Yobe</option>
-                        <option value="Zamfara">Zamfara</option>
-                      </select>
-                    </div>
-                    <div class="vehicle-form-group">
-                      <label for="vDate">Preferred date</label>
-                      <input type="date" id="vDate" name="preferredDate" required>
-                    </div>
-                    <div class="vehicle-form-group">
-                      <label for="vDuration">Rental duration or distance</label>
-                      <input type="text" id="vDuration" name="rentalDuration" placeholder="e.g. 3 days, 1 week, or 150 km" maxlength="100" required>
-                    </div>
-                    <div class="vehicle-form-group full-width">
-                      <label for="vDetails">Additional details</label>
-                      <textarea id="vDetails" name="additionalDetails" rows="4" placeholder="Chauffeur request, itinerary or anything else we should know." maxlength="2000"></textarea>
-                    </div>
+            <!-- Right Column: Gold card with vehicle-specific enquiry form -->
+            <div class="vehicle-enquiry-right">
+              <form class="vehicle-enquiry-form" id="vehicleEnquiryForm">
+                <div class="vehicle-form-grid">
+                  <div class="vehicle-form-group">
+                    <label for="vFullName">Full name</label>
+                    <input type="text" id="vFullName" name="fullName" placeholder="Your full name" maxlength="100" required>
                   </div>
+                  <div class="vehicle-form-group">
+                    <label for="vPhone">Phone number</label>
+                    <input type="tel" id="vPhone" name="phone" placeholder="+234" maxlength="25" required>
+                  </div>
+                  <div class="vehicle-form-group">
+                    <label for="vPickup">Pickup location</label>
+                    <input type="text" id="vPickup" name="pickupLocation" placeholder="Where should the journey begin?" maxlength="100" required>
+                  </div>
+                  <div class="vehicle-form-group">
+                    <label for="vDestination">Destination</label>
+                    <input type="text" id="vDestination" name="destination" placeholder="Where are you traveling to?" maxlength="100" required>
+                  </div>
+                  <div class="vehicle-form-group">
+                    <label for="vDate">Preferred date</label>
+                    <input type="text" id="vDate" name="preferredDate" placeholder="When do you need the vehicle?" maxlength="50" required onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+                  </div>
+                  <div class="vehicle-form-group">
+                    <label for="vDuration">Rental duration</label>
+                    <input type="text" id="vDuration" name="rentalDuration" placeholder="How long do you need the vehicle for?" maxlength="100" required>
+                  </div>
+                  <div class="vehicle-form-group full-width">
+                    <label for="vDetails">Additional details</label>
+                    <textarea id="vDetails" name="additionalDetails" rows="4" placeholder="Chauffeur request, itinerary or anything else we should know." maxlength="2000"></textarea>
+                  </div>
+                </div>
 
-                  <p class="vehicle-enquiry-disclaimer">
-                    Your enquiry is not a confirmed booking. Our team will contact you to discuss availability and the next steps.
-                  </p>
+                <p class="vehicle-enquiry-disclaimer">
+                  Your enquiry is not a confirmed booking. Our team will contact you to discuss availability and the next steps.
+                </p>
 
-                  <button type="submit" class="btn btn-submit-vehicle">
-                    <span>Enquire About This Vehicle</span>
-                    <img src="assets/icons/arrow-right-navy-26.svg" alt="" aria-hidden="true">
-                  </button>
-                </form>
-              </div>
+                <button type="submit" class="btn btn-submit-vehicle">
+                  <span>Enquire About This Vehicle</span>
+                  <img src="assets/icons/arrow-right-navy-26.svg" alt="" aria-hidden="true">
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -384,8 +320,8 @@
 
   <!-- Unified Global Boxed Footer -->
   <footer class="site-footer-boxed" id="contact-cta">
-    <!-- Pre-footer CTA: Ask Us About Vehicle Availability (Figma Node 71:359 / 95:32) -->
-    <div class="footer-cta-block">
+    <!-- Pre-footer CTA: Ask Us About Vehicle Availability -->
+    <div class="footer-cta-block anim-appear">
       <div class="footer-cta-text">
         <span class="eyebrow">PLANNING A TRIP OR GROUP MOVEMENT?</span>
         <h2>Ask Us About Vehicle Availability.</h2>
