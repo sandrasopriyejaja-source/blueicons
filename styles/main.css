@@ -6402,6 +6402,84 @@ body[data-page="vehicle-detail"] .vehicle-form-group input {
     font-size: 12px !important;
     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
+
+  /* ========================================================================
+     8. CONTACT US SPECIFICS ON MOBILE (Matches Hero Pattern of Other Pages)
+     Scoped strictly to body[data-page="contact"]
+     ======================================================================== */
+  body[data-page="contact"] .page-hero-section {
+    padding: 16px 0 24px !important;
+    margin-bottom: 0 !important;
+  }
+  body[data-page="contact"] .page-hero-container {
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 24px !important;
+    padding: 20px 16px !important;
+    background-color: var(--surface-subtle) !important;
+    overflow: hidden !important;
+    min-height: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  body[data-page="contact"] .page-hero-left {
+    display: contents !important;
+    padding: 0 !important;
+  }
+  body[data-page="contact"] .home-hero-nav {
+    order: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin-bottom: 24px !important;
+    padding: 0 !important;
+  }
+  body[data-page="contact"] .page-hero-copy {
+    order: 2 !important;
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  body[data-page="contact"] .page-hero-copy .eyebrow {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+    color: var(--accent-strong, #b88b45) !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    display: block !important;
+  }
+  body[data-page="contact"] .page-hero-copy .display-hero {
+    font-size: 28px !important;
+    line-height: 36px !important;
+    letter-spacing: -0.3px !important;
+    color: var(--text-primary) !important;
+    margin-bottom: 16px !important;
+  }
+  body[data-page="contact"] .page-hero-copy .hero-subheading,
+  body[data-page="contact"] .page-hero-copy .body-default {
+    font-size: 15px !important;
+    line-height: 24px !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: 0 !important;
+  }
+  body[data-page="contact"] .page-hero-right {
+    order: 3 !important;
+    width: 100% !important;
+    height: 260px !important;
+    min-height: 260px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+  body[data-page="contact"] .page-hero-right img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+  }
 }
 
 /* ==========================================================================
@@ -6659,13 +6737,28 @@ body[data-page="vehicle-detail"] .vehicle-form-group input {
   body[data-page="vehicle-detail"] .gallery-strip-thumb:hover img {
     transform: scale(1.025);
   }
+
+  /* 9. Contact Us Desktop Hover Animations (Scoped strictly to body[data-page="contact"]) */
+  body[data-page="contact"] .contact-help-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  body[data-page="contact"] .contact-help-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(7, 27, 51, 0.08);
+  }
+  body[data-page="contact"] .page-hero-right img {
+    transition: transform 0.3s ease;
+  }
+  body[data-page="contact"] .page-hero-container:hover .page-hero-right img {
+    transform: scale(1.02);
+  }
 }
 
 /* ==========================================================================
    ENHANCED MOTION & SCROLL ANIMATION SUITE
    - Animation Types: Hero Load-in, Appear, Slide-in (L/R), Staggered Groups,
      Image Reveal, Gentle Ambient Motion (Desktop/Tablet).
-   - Scoped strictly to Home, About Us, Our Services, Our Fleet (Contact Us untouched)
+   - Applied consistently across Home, About Us, Our Services, Our Fleet, Vehicle Detail, and Contact Us
    - Desktop (>=1025px): All types, 550–750ms with smooth cubic-bezier easing.
    - Tablet (769px–1024px): Appear, Stagger, Image Reveal, Slide-in, Ambient Motion.
    - Mobile (<=768px): Simpler types (Appear, Stagger, Image Reveal). Zero horizontal slide.
@@ -6872,7 +6965,9 @@ html.has-motion-anim .is-in-view .anim-img-reveal {
   body[data-page="fleet"] .vehicle-card-link:hover,
   body[data-page="fleet"] .chauffeur-gold-banner:hover,
   body[data-page="fleet"] .chauffeur-banner-media img,
-  body[data-page="fleet"] .fleet-hero-right img {
+  body[data-page="fleet"] .fleet-hero-right img,
+  body[data-page="contact"] .contact-help-card:hover,
+  body[data-page="contact"] .page-hero-right img {
     transform: none !important;
   }
 }
